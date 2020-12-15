@@ -14264,7 +14264,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -14273,6 +14273,8 @@ a.anchor-link {
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">nltk</span>
 <span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">google_drive_downloader</span> <span class="kn">import</span> <span class="n">GoogleDriveDownloader</span> <span class="k">as</span> <span class="n">gdd</span>
 </pre></div>
 
      </div>
@@ -14283,7 +14285,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Train.csv&quot;</span><span class="p">)</span>
@@ -14326,7 +14328,7 @@ Test Set: (2140, 2) 2140
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -14345,7 +14347,7 @@ Test Set: (2140, 2) 2140
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
 
 
@@ -14417,7 +14419,7 @@ Test Set: (2140, 2) 2140
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span>  <span class="nf">clean_text</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">text_field</span><span class="p">):</span>
@@ -14433,7 +14435,7 @@ Test Set: (2140, 2) 2140
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_clean</span>  <span class="o">=</span> <span class="n">clean_text</span><span class="p">(</span><span class="n">df_val</span><span class="p">,</span> <span class="s2">&quot;tweet&quot;</span><span class="p">)</span>
@@ -14455,7 +14457,7 @@ Test Set: (2140, 2) 2140
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 
 
 
@@ -14558,7 +14560,7 @@ Test Set: (2140, 2) 2140
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tokenizer</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span>
@@ -14572,7 +14574,7 @@ Test Set: (2140, 2) 2140
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_clean</span><span class="p">[</span><span class="s1">&#39;tweet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_clean</span><span class="p">[</span><span class="s1">&#39;tweet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">tokenizer</span><span class="p">)</span>
@@ -14587,7 +14589,7 @@ Test Set: (2140, 2) 2140
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_clean</span>
@@ -14606,7 +14608,7 @@ Test Set: (2140, 2) 2140
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
 
 
@@ -14704,7 +14706,7 @@ Test Set: (2140, 2) 2140
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_for_w2v</span> <span class="o">=</span> <span class="n">train_clean</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">test_clean</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -14724,7 +14726,7 @@ Test Set: (2140, 2) 2140
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
 
 
@@ -14833,7 +14835,7 @@ Test Set: (2140, 2) 2140
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># sg=0 : training with CBOW, sg=1 : training with Skip-gram</span>
@@ -14848,10 +14850,1121 @@ Test Set: (2140, 2) 2140
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Word2Vec_demo</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&lt;gensim.models.word2vec.Word2Vec at 0x1b1cf400&gt;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">Word2Vec_demo</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">vectors</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(6049, 100)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Word2Vec_demo</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">vocab</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>{&#39;The&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x518fc88&gt;,
+ &#39;CDC&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cf208&gt;,
+ &#39;currently&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cf128&gt;,
+ &#39;reports&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cfbe0&gt;,
+ &#39;deaths&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cf748&gt;,
+ &#39;In&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cf8d0&gt;,
+ &#39;general&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cf1d0&gt;,
+ &#39;the&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05d30&gt;,
+ &#39;in&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05ac8&gt;,
+ &#39;death&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05828&gt;,
+ &#39;counts&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05860&gt;,
+ &#39;between&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05898&gt;,
+ &#39;different&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05780&gt;,
+ &#39;sources&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf057f0&gt;,
+ &#39;are&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf059b0&gt;,
+ &#39;small&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05d68&gt;,
+ &#39;and&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf059e8&gt;,
+ &#39;toll&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05908&gt;,
+ &#39;stands&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05940&gt;,
+ &#39;at&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05748&gt;,
+ &#39;roughly&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05978&gt;,
+ &#39;people&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05a90&gt;,
+ &#39;today&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf057b8&gt;,
+ &#39;States&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05710&gt;,
+ &#39;reported&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05a58&gt;,
+ &#39;a&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf058d0&gt;,
+ &#39;rise&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05a20&gt;,
+ &#39;from&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05da0&gt;,
+ &#39;last&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05b00&gt;,
+ &#39;Tuesday&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05b38&gt;,
+ &#39;Southern&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05b70&gt;,
+ &#39;states&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05ba8&gt;,
+ &#39;of&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05be0&gt;,
+ &#39;those&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05c18&gt;,
+ &#39;Woman&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05c50&gt;,
+ &#39;Almost&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05c88&gt;,
+ &#39;Pandemic&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05cc0&gt;,
+ &#39;as&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05cf8&gt;,
+ &#39;Not&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05dd8&gt;,
+ &#39;to&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05e10&gt;,
+ &#39;coronavirus&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05e48&gt;,
+ &#39;nashville&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05e80&gt;,
+ &#39;IndiaFightsCorona&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05eb8&gt;,
+ &#39;We&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05ef0&gt;,
+ &#39;have&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05f28&gt;,
+ &#39;COVID&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05f60&gt;,
+ &#39;testing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05f98&gt;,
+ &#39;laboratories&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf05fd0&gt;,
+ &#39;India&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199048&gt;,
+ &#39;on&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199080&gt;,
+ &#39;th&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1990b8&gt;,
+ &#39;August&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1990f0&gt;,
+ &#39;tests&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199128&gt;,
+ &#39;been&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199160&gt;,
+ &#39;done&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199198&gt;,
+ &#39;DG&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1991d0&gt;,
+ &#39;StaySafe&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199208&gt;,
+ &#39;IndiaWillWin&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199240&gt;,
+ &#39;can&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199278&gt;,
+ &#39;generate&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1992b0&gt;,
+ &#39;large&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1992e8&gt;,
+ &#39;case&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199320&gt;,
+ &#39;but&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199358&gt;,
+ &#39;if&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199390&gt;,
+ &#39;you&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1993c8&gt;,
+ &#39;look&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199400&gt;,
+ &#39;new&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199438&gt;,
+ &#39;cases&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199470&gt;,
+ &#39;per&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1994a8&gt;,
+ &#39;million&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1994e0&gt;,
+ &#39;smaller&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199518&gt;,
+ &#39;showing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199550&gt;,
+ &#39;more&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199588&gt;,
+ &#39;than&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1995c0&gt;,
+ &#39;California&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1995f8&gt;,
+ &#39;or&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199630&gt;,
+ &#39;Texas&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199668&gt;,
+ &#39;AL&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1996a0&gt;,
+ &#39;AR&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1996d8&gt;,
+ &#39;ID&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199710&gt;,
+ &#39;KS&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199748&gt;,
+ &#39;KY&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199780&gt;,
+ &#39;LA&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1997b8&gt;,
+ &#39;MS&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1997f0&gt;,
+ &#39;NV&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199828&gt;,
+ &#39;SC&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199860&gt;,
+ &#39;Covid&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199898&gt;,
+ &#39;Act&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1998d0&gt;,
+ &#39;Now&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199908&gt;,
+ &#39;found&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199940&gt;,
+ &#39;average&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199978&gt;,
+ &#39;each&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1999b0&gt;,
+ &#39;person&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1999e8&gt;,
+ &#39;Illinois&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199a20&gt;,
+ &#39;with&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199a58&gt;,
+ &#39;is&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199a90&gt;,
+ &#39;infecting&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199ac8&gt;,
+ &#39;other&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199b00&gt;,
+ &#39;Data&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199b38&gt;,
+ &#39;shows&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199b70&gt;,
+ &#39;that&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199ba8&gt;,
+ &#39;infection&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199be0&gt;,
+ &#39;growth&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199c18&gt;,
+ &#39;rate&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199c50&gt;,
+ &#39;has&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199c88&gt;,
+ &#39;declined&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199cc0&gt;,
+ &#39;over&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199cf8&gt;,
+ &#39;time&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199d30&gt;,
+ &#39;this&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199d68&gt;,
+ &#39;factors&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199da0&gt;,
+ &#39;stayathome&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199dd8&gt;,
+ &#39;order&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199e10&gt;,
+ &#39;restrictions&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199e48&gt;,
+ &#39;put&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199e80&gt;,
+ &#39;place&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199eb8&gt;,
+ &#39;If&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199ef0&gt;,
+ &#39;tested&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199f28&gt;,
+ &#39;positive&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199f60&gt;,
+ &#39;for&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199f98&gt;,
+ &#39;no&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b199fd0&gt;,
+ &#39;symptoms&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181048&gt;,
+ &#39;stay&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181080&gt;,
+ &#39;home&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1810b8&gt;,
+ &#39;away&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1810f0&gt;,
+ &#39;Learn&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181128&gt;,
+ &#39;about&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181160&gt;,
+ &#39;CDCs&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181198&gt;,
+ &#39;recommendations&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1811d0&gt;,
+ &#39;when&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181208&gt;,
+ &#39;be&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181240&gt;,
+ &#39;around&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181278&gt;,
+ &#39;others&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1812b0&gt;,
+ &#39;after&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1812e8&gt;,
+ &#39;Obama&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181320&gt;,
+ &#39;Calls&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181358&gt;,
+ &#39;Trumps&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181390&gt;,
+ &#39;Coronavirus&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1813c8&gt;,
+ &#39;Response&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181400&gt;,
+ &#39;A&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181438&gt;,
+ &#39;Disaster&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181470&gt;,
+ &#39;administration&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1814a8&gt;,
+ &#39;did&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1814e0&gt;,
+ &#39;not&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181518&gt;,
+ &#39;leave&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181550&gt;,
+ &#39;any&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181588&gt;,
+ &#39;kind&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1815c0&gt;,
+ &#39;game&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1815f8&gt;,
+ &#39;plan&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181630&gt;,
+ &#39;something&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181668&gt;,
+ &#39;like&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1816a0&gt;,
+ &#39;chloroquine&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1816d8&gt;,
+ &#39;without&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181710&gt;,
+ &#39;macrolide&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181748&gt;,
+ &#39;treatment&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181780&gt;,
+ &#39;registry&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1817b8&gt;,
+ &#39;analysis&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1817f0&gt;,
+ &#39;Lancet&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181828&gt;,
+ &#39;Take&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181860&gt;,
+ &#39;simple&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181898&gt;,
+ &#39;daily&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1818d0&gt;,
+ &#39;precautions&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181908&gt;,
+ &#39;help&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181940&gt;,
+ &#39;prevent&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181978&gt;,
+ &#39;spread&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1819b0&gt;,
+ &#39;respiratory&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1819e8&gt;,
+ &#39;illnesses&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181a20&gt;,
+ &#39;how&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181a58&gt;,
+ &#39;protect&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181a90&gt;,
+ &#39;yourself&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181ac8&gt;,
+ &#39;NBA&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181b00&gt;,
+ &#39;restart&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181b38&gt;,
+ &#39;month&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181b70&gt;,
+ &#39;March&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181ba8&gt;,
+ &#39;we&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181be0&gt;,
+ &#39;Utah&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181c18&gt;,
+ &#39;got&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181c50&gt;,
+ &#39;matter&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181c88&gt;,
+ &#39;hours&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181cc0&gt;,
+ &#39;US&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181cf8&gt;,
+ &#39;was&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181d30&gt;,
+ &#39;just&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181d68&gt;,
+ &#39;announced&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181da0&gt;,
+ &#39;first&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181dd8&gt;,
+ &#39;participants&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181e10&gt;,
+ &#39;age&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181e48&gt;,
+ &#39;Phase&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181e80&gt;,
+ &#39;study&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181eb8&gt;,
+ &#39;our&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181ef0&gt;,
+ &#39;mRNA&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181f28&gt;,
+ &#39;vaccine&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181f60&gt;,
+ &#39;against&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181f98&gt;,
+ &#39;novel&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b181fd0&gt;,
+ &#39;Read&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151048&gt;,
+ &#39;CoronaVirusUpdates&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151080&gt;,
+ &#39;More&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1510b8&gt;,
+ &#39;lakh&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1510f0&gt;,
+ &#39;rd&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151128&gt;,
+ &#39;successive&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151160&gt;,
+ &#39;day&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151198&gt;,
+ &#39;Cumulative&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1511d0&gt;,
+ &#39;date&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151208&gt;,
+ &#39;reached&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151240&gt;,
+ &#39;Tests&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151278&gt;,
+ &#39;Per&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1512b0&gt;,
+ &#39;Million&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1512e8&gt;,
+ &#39;TPM&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151320&gt;,
+ &#39;cross&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151358&gt;,
+ &#39;Protect&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151390&gt;,
+ &#39;using&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1513c8&gt;,
+ &#39;public&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151400&gt;,
+ &#39;transportation&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151438&gt;,
+ &#39;Practice&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151470&gt;,
+ &#39;social&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1514a8&gt;,
+ &#39;distancing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1514e0&gt;,
+ &#39;avoid&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151518&gt;,
+ &#39;touching&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151550&gt;,
+ &#39;surfaces&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151588&gt;,
+ &#39;practice&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1515c0&gt;,
+ &#39;hand&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1515f8&gt;,
+ &#39;hygiene&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151630&gt;,
+ &#39;As&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151668&gt;,
+ &#39;AM&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1516a0&gt;,
+ &#39;till&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1516d8&gt;,
+ &#39;now&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151710&gt;,
+ &#39;there&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151748&gt;,
+ &#39;total&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151780&gt;,
+ &#39;amp&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1517b8&gt;,
+ &#39;related&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1517f0&gt;,
+ &#39;Manipur&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151828&gt;,
+ &#39;COVIDIndia&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151860&gt;,
+ &#39;COVIDUpdates&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151898&gt;,
+ &#39;CoronaUpdates&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1518d0&gt;,
+ &#39;Corona&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151908&gt;,
+ &#39;CoronavirusIndia&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151940&gt;,
+ &#39;CoronavirusUpdates&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151978&gt;,
+ &#39;CoronavirusPandemic&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1519b0&gt;,
+ &#39;Because&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1519e8&gt;,
+ &#39;Donald&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151a20&gt;,
+ &#39;negligence&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151a58&gt;,
+ &#39;incompetence&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151a90&gt;,
+ &#39;died&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151ac8&gt;,
+ &#39;nearly&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151b00&gt;,
+ &#39;Over&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151b38&gt;,
+ &#39;Americans&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151b70&gt;,
+ &#39;out&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151ba8&gt;,
+ &#39;work&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151be0&gt;,
+ &#39;And&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151c18&gt;,
+ &#39;yet&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151c50&gt;,
+ &#39;hes&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151c88&gt;,
+ &#39;himself&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151cc0&gt;,
+ &#39;back&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151cf8&gt;,
+ &#39;continues&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151d30&gt;,
+ &#39;scale&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151d68&gt;,
+ &#39;peaks&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151da0&gt;,
+ &#39;samples&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151dd8&gt;,
+ &#39;consecutive&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151e10&gt;,
+ &#39;days&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151e48&gt;,
+ &#39;No&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151e80&gt;,
+ &#39;country&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151eb8&gt;,
+ &#39;these&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151ef0&gt;,
+ &#39;levels&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151f28&gt;,
+ &#39;very&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151f60&gt;,
+ &#39;high&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151f98&gt;,
+ &#39;NIH&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b151fd0&gt;,
+ &#39;used&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c048&gt;,
+ &#39;planned&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c080&gt;,
+ &#39;Multiple&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c0b8&gt;,
+ &#39;Facebook&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c0f0&gt;,
+ &#39;posts&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c128&gt;,
+ &#39;claim&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c160&gt;,
+ &#39;will&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c198&gt;,
+ &#39;fined&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c1d0&gt;,
+ &#39;they&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c208&gt;,
+ &#39;talking&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c240&gt;,
+ &#39;conspiracies&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c278&gt;,
+ &#39;do&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c2b0&gt;,
+ &#39;included&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c2e8&gt;,
+ &#39;screenshot&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c320&gt;,
+ &#39;segment&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c358&gt;,
+ &#39;an&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c390&gt;,
+ &#39;Australian&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c3c8&gt;,
+ &#39;television&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c400&gt;,
+ &#39;show&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c438&gt;,
+ &#39;evidence&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c470&gt;,
+ &#39;Nobel&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c4a8&gt;,
+ &#39;Prize&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c4e0&gt;,
+ &#39;laureate&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c518&gt;,
+ &#39;Tasuku&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c550&gt;,
+ &#39;Honjo&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c588&gt;,
+ &#39;didnt&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c5c0&gt;,
+ &#39;say&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c5f8&gt;,
+ &#39;natural&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c630&gt;,
+ &#39;post&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c668&gt;,
+ &#39;claims&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c6a0&gt;,
+ &#39;fact&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c6d8&gt;,
+ &#39;Professor&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c710&gt;,
+ &#39;said&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c748&gt;,
+ &#39;his&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c780&gt;,
+ &#39;name&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c7b8&gt;,
+ &#39;misinformation&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c7f0&gt;,
+ &#39;This&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c828&gt;,
+ &#39;latest&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c860&gt;,
+ &#39;CoronaCheck&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c898&gt;,
+ &#39;NZ&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c8d0&gt;,
+ &#39;Tracker&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c908&gt;,
+ &#39;app&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c940&gt;,
+ &#39;remain&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c978&gt;,
+ &#39;important&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c9b0&gt;,
+ &#39;useful&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17c9e8&gt;,
+ &#39;Alert&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17ca20&gt;,
+ &#39;level&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17ca58&gt;,
+ &#39;People&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17ca90&gt;,
+ &#39;encouraged&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17cac8&gt;,
+ &#39;download&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17cb00&gt;,
+ &#39;similar&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17cb38&gt;,
+ &#39;one&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17cb70&gt;,
+ &#39;keep&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17cba8&gt;,
+ &#39;record&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17cbe0&gt;,
+ &#39;where&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17cc18&gt;,
+ &#39;youre&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17cc50&gt;,
+ &#39;going&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17cc88&gt;,
+ &#39;BREAKING&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17ccc0&gt;,
+ &#39;NEWS&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17ccf8&gt;,
+ &#39;president&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17cd30&gt;,
+ &#39;asked&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17cd68&gt;,
+ &#39;all&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17cda0&gt;,
+ &#39;foreign&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17cdd8&gt;,
+ &#39;nations&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17ce10&gt;,
+ &#39;south&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17ce48&gt;,
+ &#39;Africa&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17ce80&gt;,
+ &#39;before&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17ceb8&gt;,
+ &#39;due&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17cef0&gt;,
+ &#39;increasing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17cf28&gt;,
+ &#39;countries&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17cf60&gt;,
+ &#39;economies&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17cf98&gt;,
+ &#39;confirmed&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b17cfd0&gt;,
+ &#39;participate&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06048&gt;,
+ &#39;COVAX&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06080&gt;,
+ &#39;Facility&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf060b8&gt;,
+ &#39;number&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf060f0&gt;,
+ &#39;growing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06128&gt;,
+ &#39;I&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06160&gt;,
+ &#39;urge&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06198&gt;,
+ &#39;who&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf061d0&gt;,
+ &#39;joined&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06208&gt;,
+ &#39;so&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06240&gt;,
+ &#39;by&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06278&gt;,
+ &#39;September&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf062b0&gt;,
+ &#39;Very&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf062e8&gt;,
+ &#39;possibility&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06320&gt;,
+ &#39;changes&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06358&gt;,
+ &#39;anxiety&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06390&gt;,
+ &#39;may&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf063c8&gt;,
+ &#39;function&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06400&gt;,
+ &#39;into&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06438&gt;,
+ &#39;CNS&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06470&gt;,
+ &#39;brain&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf064a8&gt;,
+ &#39;To&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf064e0&gt;,
+ &#39;New&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06518&gt;,
+ &#39;Baby&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06550&gt;,
+ &#39;Get&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06588&gt;,
+ &#39;covid&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf065c0&gt;,
+ &#39;sanitizer&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf065f8&gt;,
+ &#39;developed&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06630&gt;,
+ &#39;University&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06668&gt;,
+ &#39;Kenya&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf066a0&gt;,
+ &#39;Just&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf066d8&gt;,
+ &#39;B&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06710&gt;,
+ &#39;gathering&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06748&gt;,
+ &#39;state&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06780&gt;,
+ &#39;orders&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf067b8&gt;,
+ &#39;huge&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf067f0&gt;,
+ &#39;Same&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06828&gt;,
+ &#39;goes&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06860&gt;,
+ &#39;D&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06898&gt;,
+ &#39;evaluation&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf068d0&gt;,
+ &#39;Yesterday&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06908&gt;,
+ &#39;completed&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06940&gt;,
+ &#39;were&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06978&gt;,
+ &#39;managed&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf069b0&gt;,
+ &#39;isolation&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf069e8&gt;,
+ &#39;quarantine&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06a20&gt;,
+ &#39;routine&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06a58&gt;,
+ &#39;either&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06a90&gt;,
+ &#39;their&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06ac8&gt;,
+ &#39;That&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06b00&gt;,
+ &#39;brings&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06b38&gt;,
+ &#39;N&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06b70&gt;,
+ &#39;masks&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06ba8&gt;,
+ &#39;UV&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06be0&gt;,
+ &#39;light&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06c18&gt;,
+ &#39;heat&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06c50&gt;,
+ &#39;effective&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06c88&gt;,
+ &#39;sanitizers&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06cc0&gt;,
+ &#39;shifted&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06cf8&gt;,
+ &#39;focus&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06d30&gt;,
+ &#39;moments&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06d68&gt;,
+ &#39;CoronavirusOutbreak&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06da0&gt;,
+ &#39;updated&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06dd8&gt;,
+ &#39;running&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06e10&gt;,
+ &#39;timeline&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06e48&gt;,
+ &#39;response&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06e80&gt;,
+ &#39;virus&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06eb8&gt;,
+ &#39;us&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06ef0&gt;,
+ &#39;recent&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06f28&gt;,
+ &#39;Trump&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06f60&gt;,
+ &#39;think&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06f98&gt;,
+ &#39;belong&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf06fd0&gt;,
+ &#39;list&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09048&gt;,
+ &#39;image&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09080&gt;,
+ &#39;President&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf090b8&gt;,
+ &#39;shared&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf090f0&gt;,
+ &#39;claiming&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09128&gt;,
+ &#39;he&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09160&gt;,
+ &#39;weekend&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09198&gt;,
+ &#39;choose&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf091d0&gt;,
+ &#39;spend&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09208&gt;,
+ &#39;event&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09240&gt;,
+ &#39;ft&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09278&gt;,
+ &#39;apart&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf092b0&gt;,
+ &#39;wear&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf092e8&gt;,
+ &#39;cloth&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09320&gt;,
+ &#39;face&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09358&gt;,
+ &#39;cover&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09390&gt;,
+ &#39;slow&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf093c8&gt;,
+ &#39;Mothers&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09400&gt;,
+ &#39;Stop&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09438&gt;,
+ &#39;Vaccine&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09470&gt;,
+ &#39;Singapore&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf094a8&gt;,
+ &#39;Airlines&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf094e0&gt;,
+ &#39;All&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09518&gt;,
+ &#39;Flights&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09550&gt;,
+ &#39;Due&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09588&gt;,
+ &#39;Outbreak&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf095c0&gt;,
+ &#39;Florida&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf095f8&gt;,
+ &#39;Governor&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09630&gt;,
+ &#39;Ron&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09668&gt;,
+ &#39;DeSantis&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf096a0&gt;,
+ &#39;By&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf096d8&gt;,
+ &#39;banning&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09710&gt;,
+ &#39;beer&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09748&gt;,
+ &#39;pandemic&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09780&gt;,
+ &#39;curve&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf097b8&gt;,
+ &#39;apologise&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf097f0&gt;,
+ &#39;Government&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09828&gt;,
+ &#39;Ekiti&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09860&gt;,
+ &#39;State&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09898&gt;,
+ &#39;error&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf098d0&gt;,
+ &#39;committed&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09908&gt;,
+ &#39;improving&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09940&gt;,
+ &#39;quality&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09978&gt;,
+ &#39;control&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf099b0&gt;,
+ &#39;processes&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf099e8&gt;,
+ &#39;ensure&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09a20&gt;,
+ &#39;accurate&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09a58&gt;,
+ &#39;transparent&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09a90&gt;,
+ &#39;reporting&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09ac8&gt;,
+ &#39;NYT&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09b00&gt;,
+ &#39;invented&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09b38&gt;,
+ &#39;video&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09b70&gt;,
+ &#39;doctor&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09ba8&gt;,
+ &#39;fighting&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09be0&gt;,
+ &#39;hospital&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09c18&gt;,
+ &#39;May&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09c50&gt;,
+ &#39;break&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09c88&gt;,
+ &#39;k&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09cc0&gt;,
+ &#39;Today&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09cf8&gt;,
+ &#39;South&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09d30&gt;,
+ &#39;alone&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09d68&gt;,
+ &#39;ALERT&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09da0&gt;,
+ &#39;With&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09dd8&gt;,
+ &#39;Symptoms&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09e10&gt;,
+ &#39;Are&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09e48&gt;,
+ &#39;Being&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09e80&gt;,
+ &#39;Asked&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09eb8&gt;,
+ &#39;Cough&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09ef0&gt;,
+ &#39;Directly&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09f28&gt;,
+ &#39;Onto&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09f60&gt;,
+ &#39;launched&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09f98&gt;,
+ &#39;Solidarity&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf09fd0&gt;,
+ &#39;Fund&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d048&gt;,
+ &#39;which&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d080&gt;,
+ &#39;far&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d0b8&gt;,
+ &#39;M&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d0f0&gt;,
+ &#39;individuals&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d128&gt;,
+ &#39;companies&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d160&gt;,
+ &#39;addition&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d198&gt;,
+ &#39;billion&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d1d0&gt;,
+ &#39;Member&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d208&gt;,
+ &#39;support&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d240&gt;,
+ &#39;player&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d278&gt;,
+ &#39;Cristiano&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d2b0&gt;,
+ &#39;Ronaldo&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d2e8&gt;,
+ &#39;turned&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d320&gt;,
+ &#39;hotels&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d358&gt;,
+ &#39;hospitals&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d390&gt;,
+ &#39;patients&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d3c8&gt;,
+ &#39;paying&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d400&gt;,
+ &#39;doctors&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d438&gt;,
+ &#39;staff&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d470&gt;,
+ &#39;including&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d4a8&gt;,
+ &#39;again&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d4e0&gt;,
+ &#39;asymptomatic&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d518&gt;,
+ &#39;workers&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d550&gt;,
+ &#39;involved&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d588&gt;,
+ &#39;airport&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d5c0&gt;,
+ &#39;border&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d5f8&gt;,
+ &#39;part&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d630&gt;,
+ &#39;wider&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d668&gt;,
+ &#39;surveillance&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d6a0&gt;,
+ &#39;measures&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d6d8&gt;,
+ &#39;expected&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d710&gt;,
+ &#39;early&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d748&gt;,
+ &#39;July&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d780&gt;,
+ &#39;dont&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d7b8&gt;,
+ &#39;want&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d7f0&gt;,
+ &#39;national&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d828&gt;,
+ &#39;lockdown&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d860&gt;,
+ &#39;progress&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d898&gt;,
+ &#39;UK&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d8d0&gt;,
+ &#39;PM&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d908&gt;,
+ &#39;says&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d940&gt;,
+ &#39;govt&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d978&gt;,
+ &#39;take&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d9b0&gt;,
+ &#39;further&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0d9e8&gt;,
+ &#39;insists&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0da20&gt;,
+ &#39;doesnt&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0da58&gt;,
+ &#39;second&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0da90&gt;,
+ &#39;here&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0dac8&gt;,
+ &#39;Our&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0db00&gt;,
+ &#39;update&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0db38&gt;,
+ &#39;published&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0db70&gt;,
+ &#39;Recoveries&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0dba8&gt;,
+ &#39;exceeded&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0dbe0&gt;,
+ &#39;Cases&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0dc18&gt;,
+ &#39;top&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0dc50&gt;,
+ &#39;Active&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0dc88&gt;,
+ &#39;also&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0dcc0&gt;,
+ &#39;ones&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0dcf8&gt;,
+ &#39;presently&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0dd30&gt;,
+ &#39;recoveries&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0dd68&gt;,
+ &#39;There&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0dda0&gt;,
+ &#39;current&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0ddd8&gt;,
+ &#39;capacity&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0de10&gt;,
+ &#39;gives&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0de48&gt;,
+ &#39;excess&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0de80&gt;,
+ &#39;next&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0deb8&gt;,
+ &#39;week&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0def0&gt;,
+ &#39;projecting&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0df28&gt;,
+ &#39;arrivals&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0df60&gt;,
+ &#39;departures&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0df98&gt;,
+ &#39;facilities&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1bf0dfd0&gt;,
+ &#39;Schools&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1048&gt;,
+ &#39;struggling&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1080&gt;,
+ &#39;cope&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a10b8&gt;,
+ &#39;lack&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a10f0&gt;,
+ &#39;infections&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1128&gt;,
+ &#39;since&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1160&gt;,
+ &#39;it&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1198&gt;,
+ &#39;became&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a11d0&gt;,
+ &#39;compulsory&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1208&gt;,
+ &#39;pupils&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1240&gt;,
+ &#39;return&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1278&gt;,
+ &#39;But&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a12b0&gt;,
+ &#39;should&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a12e8&gt;,
+ &#39;get&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1320&gt;,
+ &#39;your&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1358&gt;,
+ &#39;child&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1390&gt;,
+ &#39;Heres&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a13c8&gt;,
+ &#39;Scientists&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1400&gt;,
+ &#39;AstraZeneca&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1438&gt;,
+ &#39;complain&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1470&gt;,
+ &#39;keeps&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a14a8&gt;,
+ &#39;being&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a14e0&gt;,
+ &#39;delayed&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1518&gt;,
+ &#39;up&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1550&gt;,
+ &#39;ask&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1588&gt;,
+ &#39;ready&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a15c0&gt;,
+ &#39;Masks&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a15f8&gt;,
+ &#39;widely&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1630&gt;,
+ &#39;When&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1668&gt;,
+ &#39;mask&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a16a0&gt;,
+ &#39;them&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a16d8&gt;,
+ &#39;incl&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1710&gt;,
+ &#39;WearAMask&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1748&gt;,
+ &#39;WorldMaskWeek&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1780&gt;,
+ &#39;COVIDNigeria&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a17b8&gt;,
+ &#39;Lagos&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a17f0&gt;,
+ &#39;Gombe&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1828&gt;,
+ &#39;Plateau&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1860&gt;,
+ &#39;Kwara&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1898&gt;,
+ &#39;Enugu&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a18d0&gt;,
+ &#39;Ogun&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1908&gt;,
+ &#39;Katsina&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1940&gt;,
+ &#39;Bauchi&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1978&gt;,
+ &#39;Osun&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a19b0&gt;,
+ &#39;Rivers&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a19e8&gt;,
+ &#39;discharged&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1a20&gt;,
+ &#39;Did&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1a58&gt;,
+ &#39;You&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1a90&gt;,
+ &#39;Already&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1ac8&gt;,
+ &#39;Have&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1b00&gt;,
+ &#39;Test&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1b38&gt;,
+ &#39;RT&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1b70&gt;,
+ &#39;INDIA&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1ba8&gt;,
+ &#39;sustained&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1be0&gt;,
+ &#39;surges&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1c18&gt;,
+ &#39;ahead&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1c50&gt;,
+ &#39;highest&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1c88&gt;,
+ &#39;single&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1cc0&gt;,
+ &#39;RECOVERY&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1cf8&gt;,
+ &#39;Italy&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1d30&gt;,
+ &#39;exhausted&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1d68&gt;,
+ &#39;Has&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1da0&gt;,
+ &#39;Been&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1dd8&gt;,
+ &#39;Forced&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1e10&gt;,
+ &#39;Wear&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1e48&gt;,
+ &#39;Protective&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1e80&gt;,
+ &#39;Medical&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1eb8&gt;,
+ &#39;Mask&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1ef0&gt;,
+ &#39;donaldtrump&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1f28&gt;,
+ &#39;moving&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1f60&gt;,
+ &#39;offline&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1f98&gt;,
+ &#39;user&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a1fd0&gt;,
+ &#39;posted&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092048&gt;,
+ &#39;site&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092080&gt;,
+ &#39;told&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0920b8&gt;,
+ &#39;had&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0920f0&gt;,
+ &#39;dead&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092128&gt;,
+ &#39;living&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092160&gt;,
+ &#39;under&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092198&gt;,
+ &#39;continued&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0921d0&gt;,
+ &#39;government&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092208&gt;,
+ &#39;toiletpaper&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092240&gt;,
+ &#39;Residents&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092278&gt;,
+ &#39;York&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0922b0&gt;,
+ &#39;what&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0922e8&gt;,
+ &#39;rule&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092320&gt;,
+ &#39;allows&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092358&gt;,
+ &#39;England&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092390&gt;,
+ &#39;fail&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0923c8&gt;,
+ &#39;selfisolate&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092400&gt;,
+ &#39;read&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092438&gt;,
+ &#39;click&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092470&gt;,
+ &#39;Central&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0924a8&gt;,
+ &#39;given&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0924e0&gt;,
+ &#39;permission&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092518&gt;,
+ &#39;schools&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092550&gt;,
+ &#39;reopen&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092588&gt;,
+ &#39;approved&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0925c0&gt;,
+ &#39;labs&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0925f8&gt;,
+ &#39;These&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092630&gt;,
+ &#39;Govt&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092668&gt;,
+ &#39;Pvt&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0926a0&gt;,
+ &#39;come&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0926d8&gt;,
+ &#39;pressure&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092710&gt;,
+ &#39;availability&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092748&gt;,
+ &#39;Fewer&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092780&gt;,
+ &#39;kids&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0927b8&gt;,
+ &#39;dying&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0927f0&gt;,
+ &#39;white&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092828&gt;,
+ &#39;paper&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092860&gt;,
+ &#39;examines&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092898&gt;,
+ &#39;why&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0928d0&gt;,
+ &#39;WHO&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092908&gt;,
+ &#39;almost&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092940&gt;,
+ &#39;Although&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092978&gt;,
+ &#39;affected&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0929b0&gt;,
+ &#39;continue&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0929e8&gt;,
+ &#39;see&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092a20&gt;,
+ &#39;intense&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092a58&gt;,
+ &#39;transmission&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092a90&gt;,
+ &#39;relatively&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092ac8&gt;,
+ &#39;group&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092b00&gt;,
+ &#39;Justin&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092b38&gt;,
+ &#39;Trudeau&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092b70&gt;,
+ &#39;George&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092ba8&gt;,
+ &#39;Soros&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092be0&gt;,
+ &#39;responsible&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092c18&gt;,
+ &#39;born&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092c50&gt;,
+ &#39;laboratory&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092c88&gt;,
+ &#39;sensitivity&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092cc0&gt;,
+ &#39;test&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092cf8&gt;,
+ &#39;definitely&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092d30&gt;,
+ &#39;specialists&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092d68&gt;,
+ &#39;seen&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092da0&gt;,
+ &#39;real&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092dd8&gt;,
+ &#39;havent&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092e10&gt;,
+ &#39;looked&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092e48&gt;,
+ &#39;hard&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092e80&gt;,
+ &#39;because&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092eb8&gt;,
+ &#39;weve&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092ef0&gt;,
+ &#39;doing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092f28&gt;,
+ &#39;things&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092f60&gt;,
+ &#39;Experts&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092f98&gt;,
+ &#39;Call&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b092fd0&gt;,
+ &#39;Out&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a048&gt;,
+ &#39;Claims&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a080&gt;,
+ &#39;Cow&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a0b8&gt;,
+ &#39;AYUSH&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a0f0&gt;,
+ &#39;Can&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a128&gt;,
+ &#39;Prevent&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a160&gt;,
+ &#39;Treat&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a198&gt;,
+ &#39;main&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a1d0&gt;,
+ &#39;mode&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a208&gt;,
+ &#39;Novel&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a240&gt;,
+ &#39;through&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a278&gt;,
+ &#39;droplets&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a2b0&gt;,
+ &#39;possible&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a2e8&gt;,
+ &#39;infected&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a320&gt;,
+ &#39;carrying&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a358&gt;,
+ &#39;clear&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a390&gt;,
+ &#39;smoke&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a3c8&gt;,
+ &#39;cause&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a400&gt;,
+ &#39;various&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a438&gt;,
+ &#39;health&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a470&gt;,
+ &#39;problems&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a4a8&gt;,
+ &#39;An&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a4e0&gt;,
+ &#39;article&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a518&gt;,
+ &#39;Bill&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a550&gt;,
+ &#39;Gates&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a588&gt;,
+ &#39;would&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a5c0&gt;,
+ &#39;human&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a5f8&gt;,
+ &#39;DNA&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a630&gt;,
+ &#39;General&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a668&gt;,
+ &#39;DYK&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a6a0&gt;,
+ &#39;Handwashing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a6d8&gt;,
+ &#39;remains&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a710&gt;,
+ &#39;best&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a748&gt;,
+ &#39;ways&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a780&gt;,
+ &#39;viruses&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a7b8&gt;,
+ &#39;Here&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a7f0&gt;,
+ &#39;According&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a828&gt;,
+ &#39;Health&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a860&gt;,
+ &#39;Department&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a898&gt;,
+ &#39;Haryana&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a8d0&gt;,
+ &#39;RecoveryRate&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a908&gt;,
+ &#39;Sundays&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a940&gt;,
+ &#39;Mondays&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a978&gt;,
+ &#39;tend&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a9b0&gt;,
+ &#39;numbers&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09a9e8&gt;,
+ &#39;Still&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09aa20&gt;,
+ &#39;rising&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09aa58&gt;,
+ &#39;hospitalizations&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09aa90&gt;,
+ &#39;jump&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09aac8&gt;,
+ &#39;holiday&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09ab00&gt;,
+ &#39;report&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09ab38&gt;,
+ &#39;World&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09ab70&gt;,
+ &#39;Organization&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09aba8&gt;,
+ &#39;parliament&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09abe0&gt;,
+ &#39;went&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09ac18&gt;,
+ &#39;empty&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09ac50&gt;,
+ &#39;thousands&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09ac88&gt;,
+ &#39;times&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09acc0&gt;,
+ &#39;Twitter&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09acf8&gt;,
+ &#39;YouTube&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09ad30&gt;,
+ &#39;salt&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09ad68&gt;,
+ &#39;remedy&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09ada0&gt;,
+ &#39;UN&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09add8&gt;,
+ &#39;Antonio&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09ae10&gt;,
+ &#39;sustainable&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09ae48&gt;,
+ &#39;development&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09ae80&gt;,
+ &#39;question&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09aeb8&gt;,
+ &#39;made&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09aef0&gt;,
+ &#39;hunger&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09af28&gt;,
+ &#39;Latest&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09af60&gt;,
+ &#39;world&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09af98&gt;,
+ &#39;news&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09afd0&gt;,
+ &#39;Instagram&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4048&gt;,
+ &#39;circulation&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4080&gt;,
+ &#39;many&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a40b8&gt;,
+ &#39;months&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a40f0&gt;,
+ &#39;Across&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4128&gt;,
+ &#39;tracked&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4160&gt;,
+ &#39;bulk&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4198&gt;,
+ &#39;Louisiana&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a41d0&gt;,
+ &#39;Philippines&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4208&gt;,
+ &#39;crisis&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4240&gt;,
+ &#39;vocal&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4278&gt;,
+ &#39;closure&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a42b0&gt;,
+ &#39;Indias&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a42e8&gt;,
+ &#39;Total&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4320&gt;,
+ &#39;contribute&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4358&gt;,
+ &#39;active&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4390&gt;,
+ &#39;fatality&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a43c8&gt;,
+ &#39;most&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4400&gt;,
+ &#39;seeing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4438&gt;,
+ &#39;its&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4470&gt;,
+ &#39;older&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a44a8&gt;,
+ &#39;citizens&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a44e0&gt;,
+ &#39;Black&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4518&gt;,
+ &#39;Asian&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4550&gt;,
+ &#39;communities&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4588&gt;,
+ &#39;key&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a45c0&gt;,
+ &#39;paid&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a45f8&gt;,
+ &#39;fewer&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4630&gt;,
+ &#39;protections&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4668&gt;,
+ &#39;scales&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a46a0&gt;,
+ &#39;tota&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a46d8&gt;,
+ &#39;Italian&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4710&gt;,
+ &#39;nobody&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4748&gt;,
+ &#39;dangerous&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4780&gt;,
+ &#39;flu&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a47b8&gt;,
+ &#39;influenza&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a47f0&gt;,
+ &#39;vaccination&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4828&gt;,
+ &#39;mandatory&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4860&gt;,
+ &#39;Georgia&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4898&gt;,
+ &#39;fall&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a48d0&gt;,
+ &#39;mortality&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4908&gt;,
+ &#39;rates&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4940&gt;,
+ &#39;significantly&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4978&gt;,
+ &#39;lower&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a49b0&gt;,
+ &#39;fatalities&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a49e8&gt;,
+ &#39;caused&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4a20&gt;,
+ &#39;Mt&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4a58&gt;,
+ &#39;Roskill&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4a90&gt;,
+ &#39;Evangelical&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4ac8&gt;,
+ &#39;Fellowship&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4b00&gt;,
+ &#39;bereavement&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4b38&gt;,
+ &#39;includes&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4b70&gt;,
+ &#39;whose&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4ba8&gt;,
+ &#39;source&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4be0&gt;,
+ &#39;events&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4c18&gt;,
+ &#39;Zealand&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4c50&gt;,
+ &#39;receiving&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4c88&gt;,
+ &#39;hospitallevel&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4cc0&gt;,
+ &#39;care&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4cf8&gt;,
+ &#39;bringing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4d30&gt;,
+ &#39;pm&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4d68&gt;,
+ &#39;April&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4da0&gt;,
+ &#39;breakdown&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4dd8&gt;,
+ &#39;FCT&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4e10&gt;,
+ &#39;Kano&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4e48&gt;,
+ &#39;Oyo&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4e80&gt;,
+ &#39;Edo&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4eb8&gt;,
+ &#39;Kaduna&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4ef0&gt;,
+ &#39;Akwa&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4f28&gt;,
+ &#39;Ibom&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4f60&gt;,
+ &#39;Delta&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4f98&gt;,
+ &#39;Ondo&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a4fd0&gt;,
+ &#39;Niger&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae048&gt;,
+ &#39;Benue&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae080&gt;,
+ &#39;Anambra&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae0b8&gt;,
+ &#39;Borno&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae0f0&gt;,
+ &#39;Jigawa&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae128&gt;,
+ &#39;biggest&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae160&gt;,
+ &#39;change&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae198&gt;,
+ &#39;data&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae1d0&gt;,
+ &#39;hospitalized&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae208&gt;,
+ &#39;Floridas&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae240&gt;,
+ &#39;seem&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae278&gt;,
+ &#39;likely&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae2b0&gt;,
+ &#39;decline&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae2e8&gt;,
+ &#39;soon&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae320&gt;,
+ &#39;Confirmed&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae358&gt;,
+ &#39;Recovered&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae390&gt;,
+ &#39;Deaths&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae3c8&gt;,
+ &#39;Via&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae400&gt;,
+ &#39;Galicia&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae438&gt;,
+ &#39;enabled&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae470&gt;,
+ &#39;s&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae4a8&gt;,
+ &#39;commitment&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae4e0&gt;,
+ &#39;set&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae518&gt;,
+ &#39;Laboratories&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae550&gt;,
+ &#39;expanding&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae588&gt;,
+ &#39;For&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae5c0&gt;,
+ &#39;details&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae5f8&gt;,
+ &#39;visit&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae630&gt;,
+ &#39;ICMRFightsCOVID&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae668&gt;,
+ &#39;Claim&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae6a0&gt;,
+ &#39;minister&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae6d8&gt;,
+ &#39;conspiracy&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae710&gt;,
+ &#39;Pregnant&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae748&gt;,
+ &#39;women&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae780&gt;,
+ &#39;higher&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae7b8&gt;,
+ &#39;underway&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae7f0&gt;,
+ &#39;Once&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae828&gt;,
+ &#39;projects&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae860&gt;,
+ &#39;complete&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae898&gt;,
+ &#39;controlling&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae8d0&gt;,
+ &#39;effectively&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae908&gt;,
+ &#39;easier&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae940&gt;,
+ &#39;proper&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae978&gt;,
+ &#39;medicines&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae9b0&gt;,
+ &#39;vaccines&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0ae9e8&gt;,
+ &#39;etc&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aea20&gt;,
+ &#39;infectious&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aea58&gt;,
+ &#39;diseases&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aea90&gt;,
+ &#39;across&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aeac8&gt;,
+ &#39;It&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aeb00&gt;,
+ &#39;acquired&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aeb38&gt;,
+ &#39;locally&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aeb70&gt;,
+ &#39;unknown&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aeba8&gt;,
+ &#39;Compare&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aebe0&gt;,
+ &#39;Mexico&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aec18&gt;,
+ &#39;population&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aec50&gt;,
+ &#39;Californias&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aec88&gt;,
+ &#39;even&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aecc0&gt;,
+ &#39;close&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aecf8&gt;,
+ &#39;community&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aed30&gt;,
+ &#39;Auckland&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aed68&gt;,
+ &#39;based&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aeda0&gt;,
+ &#39;connected&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aedd8&gt;,
+ &#39;existing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aee10&gt;,
+ &#39;outbreak&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aee48&gt;,
+ &#39;contacts&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aee80&gt;,
+ &#39;already&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aeeb8&gt;,
+ &#39;household&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aeef0&gt;,
+ &#39;previously&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aef28&gt;,
+ &#39;still&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aef60&gt;,
+ &#39;investigation&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aef98&gt;,
+ &#39;GP&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0aefd0&gt;,
+ &#39;Wellington&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2048&gt;,
+ &#39;precautionary&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2080&gt;,
+ &#39;message&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a20b8&gt;,
+ &#39;catch&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a20f0&gt;,
+ &#39;fire&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2128&gt;,
+ &#39;amount&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2160&gt;,
+ &#39;alcohol&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2198&gt;,
+ &#39;hands&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a21d0&gt;,
+ &#39;lady&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2208&gt;,
+ &#39;near&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2240&gt;,
+ &#39;ended&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2278&gt;,
+ &#39;burning&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a22b0&gt;,
+ &#39;her&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a22e8&gt;,
+ &#39;Zealands&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2320&gt;,
+ &#39;Says&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2358&gt;,
+ &#39;bought&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2390&gt;,
+ &#39;shares&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a23c8&gt;,
+ &#39;primary&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2400&gt;,
+ &#39;supplier&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2438&gt;,
+ &#39;hydroxychloroquine&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2470&gt;,
+ &#39;February&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a24a8&gt;,
+ &#39;student&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a24e0&gt;,
+ &#39;Pondicherry&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2518&gt;,
+ &#39;accepted&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2550&gt;,
+ &#39;turning&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2588&gt;,
+ &#39;records&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a25c0&gt;,
+ &#39;Highest&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a25f8&gt;,
+ &#39;ever&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2630&gt;,
+ &#39;peak&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2668&gt;,
+ &#39;exceed&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a26a0&gt;,
+ &#39;Do&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a26d8&gt;,
+ &#39;cough&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2710&gt;,
+ &#39;fever&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2748&gt;,
+ &#39;runny&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2780&gt;,
+ &#39;nose&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a27b8&gt;,
+ &#39;came&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a27f0&gt;,
+ &#39;suddenly&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2828&gt;,
+ &#39;theres&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2860&gt;,
+ &#39;good&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2898&gt;,
+ &#39;chance&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a28d0&gt;,
+ &#39;could&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2908&gt;,
+ &#39;Watch&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2940&gt;,
+ &#39;find&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2978&gt;,
+ &#39;Responsible&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a29b0&gt;,
+ &#39;china&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a29e8&gt;,
+ &#39;Mumbai&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2a20&gt;,
+ &#39;District&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2a58&gt;,
+ &#39;Maharastra&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2a90&gt;,
+ &#39;CoronaUpdatesInIndia&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2ac8&gt;,
+ &#39;Public&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2b00&gt;,
+ &#39;weekly&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2b38&gt;,
+ &#39;include&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2b70&gt;,
+ &#39;common&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2ba8&gt;,
+ &#39;cold&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2be0&gt;,
+ &#39;suspected&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2c18&gt;,
+ &#39;causing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2c50&gt;,
+ &#39;Some&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2c88&gt;,
+ &#39;become&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2cc0&gt;,
+ &#39;severely&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2cf8&gt;,
+ &#39;ill&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2d30&gt;,
+ &#39;means&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2d68&gt;,
+ &#39;require&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2da0&gt;,
+ &#39;hospitalization&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2dd8&gt;,
+ &#39;intensive&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2e10&gt;,
+ &#39;ventilator&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2e48&gt;,
+ &#39;breathe&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2e80&gt;,
+ &#39;die&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2eb8&gt;,
+ &#39;Camila&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2ef0&gt;,
+ &#39;Brazilian&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2f28&gt;,
+ &#39;actress&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2f60&gt;,
+ &#39;contracted&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2f98&gt;,
+ &#39;she&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b0a2fd0&gt;,
+ &#39;caught&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09d048&gt;,
+ &#39;malaria&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09d080&gt;,
+ &#39;wrong&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09d0b8&gt;,
+ &#39;causes&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09d0f0&gt;,
+ &#39;sudden&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09d128&gt;,
+ &#39;syndrome&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09d160&gt;,
+ &#39;Increasing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09d198&gt;,
+ &#39;gap&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09d1d0&gt;,
+ &#39;parties&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09d208&gt;,
+ &#39;deadly&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09d240&gt;,
+ &#39;consequences&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09d278&gt;,
+ &#39;Cabinet&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09d2b0&gt;,
+ &#39;Office&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09d2e8&gt;,
+ &#39;Minister&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09d320&gt;,
+ &#39;shift&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09d358&gt;,
+ &#39;working&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b09d390&gt;,
+ ...}</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Word2Vec_demo</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">get_vector</span><span class="p">(</span><span class="s1">&#39;found&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14873,7 +15986,32 @@ Test Set: (2140, 2) 2140
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;gensim.models.word2vec.Word2Vec at 0x1b1ffac8&gt;</pre>
+<pre>array([ 1.7468402e-01, -2.3895141e-01, -1.2570655e-01, -1.4457579e-01,
+        3.1448278e-01, -6.1771788e-02,  4.0131178e-01,  2.3023207e-02,
+        1.8269461e-01,  3.0011183e-01, -3.4888962e-01,  2.0447232e-01,
+        5.0566327e-02,  4.2360231e-01,  4.2481873e-02, -3.1345412e-01,
+        3.5330796e-01,  1.8186851e-01,  1.8561562e-03,  3.3466924e-02,
+       -1.4866460e-02, -2.0600347e-01, -1.9167091e-01,  3.7730329e-02,
+        3.9650205e-01, -5.4156549e-02, -1.4550948e-01,  3.3591028e-02,
+       -1.4245722e-01, -1.8013638e-02,  1.6356285e-01, -1.2821931e-02,
+       -1.2848583e-01,  4.5414783e-02, -1.3426217e-01,  5.2093452e-01,
+       -9.8551437e-02,  9.5682062e-02,  9.6772984e-02,  1.8266857e-01,
+       -6.9924027e-02, -5.4984950e-02, -1.0183933e-01, -1.1726473e-01,
+        5.8764800e-02, -4.1312301e-01, -1.1973436e-01, -1.2555306e-02,
+        6.8841465e-02,  6.0565505e-02, -3.8582534e-01, -1.0763192e-02,
+        1.9395986e-01,  9.9750221e-02, -4.1037820e-02, -3.6554076e-02,
+       -6.8847001e-02,  4.4502404e-01,  3.3523131e-03, -4.2607423e-02,
+       -4.4976871e-02, -3.5977980e-01,  1.5290971e-01, -1.4895533e-01,
+        3.7546733e-01,  2.2501698e-01,  1.0526702e-01,  1.5570752e-01,
+        1.1773259e-01, -1.8087287e-01, -2.3545448e-04, -6.7609087e-02,
+       -8.7588280e-02,  7.2173506e-02, -5.9545331e-02,  1.2289852e-01,
+        3.3857301e-01, -2.2721319e-02, -8.2919940e-02, -2.7851918e-01,
+       -1.7086729e-01, -7.0162639e-02,  1.3810225e-01,  1.5488239e-01,
+       -1.9446474e-01, -3.9574447e-01,  3.9845398e-01,  3.4987786e-01,
+        1.8884547e-01, -1.3806354e-01,  5.5228874e-02,  1.8776821e-01,
+        5.5674082e-01,  9.5680878e-03, -3.0645829e-01, -2.0036745e-01,
+       -2.8359497e-01, -3.7144691e-02, -3.5910556e-01, -9.2040367e-02],
+      dtype=float32)</pre>
 </div>
 
 </div>
@@ -14888,7 +16026,7 @@ Test Set: (2140, 2) 2140
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">Word2Vec_demo</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">vectors</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Word2Vec_demo</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">similar_by_word</span><span class="p">(</span><span class="s1">&#39;found&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14910,7 +16048,16 @@ Test Set: (2140, 2) 2140
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(6049, 100)</pre>
+<pre>[(&#39;discovered&#39;, 0.9009675979614258),
+ (&#39;patient&#39;, 0.9005997180938721),
+ (&#39;cured&#39;, 0.894566535949707),
+ (&#39;treated&#39;, 0.8866868615150452),
+ (&#39;dying&#39;, 0.8794901967048645),
+ (&#39;Israel&#39;, 0.8770588040351868),
+ (&#39;made&#39;, 0.8715714812278748),
+ (&#39;developed&#39;, 0.8680902719497681),
+ (&#39;killed&#39;, 0.8655831813812256),
+ (&#39;contracted&#39;, 0.8653349280357361)]</pre>
 </div>
 
 </div>
@@ -14925,7 +16072,7 @@ Test Set: (2140, 2) 2140
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Word2Vec_demo</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">vocab</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Word2Vec_demo</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">similar_by_word</span><span class="p">(</span><span class="s1">&#39;learn&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14947,1007 +16094,16 @@ Test Set: (2140, 2) 2140
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;The&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ff4e0&gt;,
- &#39;CDC&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ff588&gt;,
- &#39;currently&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452828&gt;,
- &#39;reports&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452898&gt;,
- &#39;deaths&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452a20&gt;,
- &#39;In&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452a58&gt;,
- &#39;general&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452a90&gt;,
- &#39;the&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452ac8&gt;,
- &#39;in&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452dd8&gt;,
- &#39;death&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452b00&gt;,
- &#39;counts&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452940&gt;,
- &#39;between&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452c18&gt;,
- &#39;different&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452978&gt;,
- &#39;sources&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c4529b0&gt;,
- &#39;are&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452d68&gt;,
- &#39;small&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452d30&gt;,
- &#39;and&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452da0&gt;,
- &#39;toll&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c4527b8&gt;,
- &#39;stands&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c4529e8&gt;,
- &#39;at&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452c88&gt;,
- &#39;roughly&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452cc0&gt;,
- &#39;people&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452cf8&gt;,
- &#39;today&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452860&gt;,
- &#39;States&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452ba8&gt;,
- &#39;reported&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452b38&gt;,
- &#39;a&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452b70&gt;,
- &#39;rise&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452c50&gt;,
- &#39;from&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452e10&gt;,
- &#39;last&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452e48&gt;,
- &#39;Tuesday&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452e80&gt;,
- &#39;Southern&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452eb8&gt;,
- &#39;states&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452ef0&gt;,
- &#39;of&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452f28&gt;,
- &#39;those&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452f60&gt;,
- &#39;Woman&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452f98&gt;,
- &#39;Almost&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c452fd0&gt;,
- &#39;Pandemic&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132048&gt;,
- &#39;as&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132080&gt;,
- &#39;Not&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1320b8&gt;,
- &#39;to&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1320f0&gt;,
- &#39;coronavirus&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132128&gt;,
- &#39;nashville&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132160&gt;,
- &#39;IndiaFightsCorona&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132198&gt;,
- &#39;We&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1321d0&gt;,
- &#39;have&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132208&gt;,
- &#39;COVID&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132240&gt;,
- &#39;testing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132278&gt;,
- &#39;laboratories&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1322b0&gt;,
- &#39;India&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1322e8&gt;,
- &#39;on&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132320&gt;,
- &#39;th&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132358&gt;,
- &#39;August&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132390&gt;,
- &#39;tests&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1323c8&gt;,
- &#39;been&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132400&gt;,
- &#39;done&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132438&gt;,
- &#39;DG&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132470&gt;,
- &#39;StaySafe&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1324a8&gt;,
- &#39;IndiaWillWin&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1324e0&gt;,
- &#39;can&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132518&gt;,
- &#39;generate&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132550&gt;,
- &#39;large&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132588&gt;,
- &#39;case&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1325c0&gt;,
- &#39;but&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1325f8&gt;,
- &#39;if&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132630&gt;,
- &#39;you&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132668&gt;,
- &#39;look&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1326a0&gt;,
- &#39;new&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1326d8&gt;,
- &#39;cases&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132710&gt;,
- &#39;per&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132748&gt;,
- &#39;million&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132780&gt;,
- &#39;smaller&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1327b8&gt;,
- &#39;showing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1327f0&gt;,
- &#39;more&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132828&gt;,
- &#39;than&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132860&gt;,
- &#39;California&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132898&gt;,
- &#39;or&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1328d0&gt;,
- &#39;Texas&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132908&gt;,
- &#39;AL&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132940&gt;,
- &#39;AR&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132978&gt;,
- &#39;ID&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1329b0&gt;,
- &#39;KS&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1329e8&gt;,
- &#39;KY&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132a20&gt;,
- &#39;LA&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132a58&gt;,
- &#39;MS&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132a90&gt;,
- &#39;NV&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132ac8&gt;,
- &#39;SC&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132b00&gt;,
- &#39;Covid&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132b38&gt;,
- &#39;Act&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132b70&gt;,
- &#39;Now&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132ba8&gt;,
- &#39;found&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132be0&gt;,
- &#39;average&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132c18&gt;,
- &#39;each&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132c50&gt;,
- &#39;person&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132c88&gt;,
- &#39;Illinois&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132cc0&gt;,
- &#39;with&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132cf8&gt;,
- &#39;is&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132d30&gt;,
- &#39;infecting&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132d68&gt;,
- &#39;other&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132da0&gt;,
- &#39;Data&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132dd8&gt;,
- &#39;shows&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132e10&gt;,
- &#39;that&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132e48&gt;,
- &#39;infection&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132e80&gt;,
- &#39;growth&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132eb8&gt;,
- &#39;rate&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132ef0&gt;,
- &#39;has&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132f28&gt;,
- &#39;declined&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132f60&gt;,
- &#39;over&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132f98&gt;,
- &#39;time&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b132fd0&gt;,
- &#39;this&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4048&gt;,
- &#39;factors&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4080&gt;,
- &#39;stayathome&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a40b8&gt;,
- &#39;order&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a40f0&gt;,
- &#39;restrictions&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4128&gt;,
- &#39;put&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4160&gt;,
- &#39;place&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4198&gt;,
- &#39;If&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a41d0&gt;,
- &#39;tested&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4208&gt;,
- &#39;positive&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4240&gt;,
- &#39;for&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4278&gt;,
- &#39;no&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a42b0&gt;,
- &#39;symptoms&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a42e8&gt;,
- &#39;stay&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4320&gt;,
- &#39;home&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4358&gt;,
- &#39;away&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4390&gt;,
- &#39;Learn&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a43c8&gt;,
- &#39;about&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4400&gt;,
- &#39;CDCs&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4438&gt;,
- &#39;recommendations&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4470&gt;,
- &#39;when&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a44a8&gt;,
- &#39;be&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a44e0&gt;,
- &#39;around&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4518&gt;,
- &#39;others&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4550&gt;,
- &#39;after&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4588&gt;,
- &#39;Obama&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a45c0&gt;,
- &#39;Calls&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a45f8&gt;,
- &#39;Trumps&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4630&gt;,
- &#39;Coronavirus&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4668&gt;,
- &#39;Response&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a46a0&gt;,
- &#39;A&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a46d8&gt;,
- &#39;Disaster&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4710&gt;,
- &#39;administration&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4748&gt;,
- &#39;did&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4780&gt;,
- &#39;not&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a47b8&gt;,
- &#39;leave&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a47f0&gt;,
- &#39;any&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4828&gt;,
- &#39;kind&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4860&gt;,
- &#39;game&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4898&gt;,
- &#39;plan&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a48d0&gt;,
- &#39;something&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4908&gt;,
- &#39;like&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4940&gt;,
- &#39;chloroquine&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4978&gt;,
- &#39;without&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a49b0&gt;,
- &#39;macrolide&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a49e8&gt;,
- &#39;treatment&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4a20&gt;,
- &#39;registry&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4a58&gt;,
- &#39;analysis&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4a90&gt;,
- &#39;Lancet&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4ac8&gt;,
- &#39;Take&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4b00&gt;,
- &#39;simple&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4b38&gt;,
- &#39;daily&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4b70&gt;,
- &#39;precautions&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4ba8&gt;,
- &#39;help&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4be0&gt;,
- &#39;prevent&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4c18&gt;,
- &#39;spread&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4c50&gt;,
- &#39;respiratory&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4c88&gt;,
- &#39;illnesses&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4cc0&gt;,
- &#39;how&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4cf8&gt;,
- &#39;protect&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4d30&gt;,
- &#39;yourself&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4d68&gt;,
- &#39;NBA&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4da0&gt;,
- &#39;restart&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4dd8&gt;,
- &#39;month&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4e10&gt;,
- &#39;March&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4e48&gt;,
- &#39;we&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4e80&gt;,
- &#39;Utah&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4eb8&gt;,
- &#39;got&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4ef0&gt;,
- &#39;matter&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4f28&gt;,
- &#39;hours&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4f60&gt;,
- &#39;US&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4f98&gt;,
- &#39;was&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1a4fd0&gt;,
- &#39;just&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4048&gt;,
- &#39;announced&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4080&gt;,
- &#39;first&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c40b8&gt;,
- &#39;participants&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c40f0&gt;,
- &#39;age&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4128&gt;,
- &#39;Phase&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4160&gt;,
- &#39;study&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4198&gt;,
- &#39;our&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c41d0&gt;,
- &#39;mRNA&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4208&gt;,
- &#39;vaccine&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4240&gt;,
- &#39;against&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4278&gt;,
- &#39;novel&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c42b0&gt;,
- &#39;Read&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c42e8&gt;,
- &#39;CoronaVirusUpdates&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4320&gt;,
- &#39;More&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4358&gt;,
- &#39;lakh&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4390&gt;,
- &#39;rd&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c43c8&gt;,
- &#39;successive&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4400&gt;,
- &#39;day&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4438&gt;,
- &#39;Cumulative&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4470&gt;,
- &#39;date&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c44a8&gt;,
- &#39;reached&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c44e0&gt;,
- &#39;Tests&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4518&gt;,
- &#39;Per&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4550&gt;,
- &#39;Million&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4588&gt;,
- &#39;TPM&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c45c0&gt;,
- &#39;cross&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c45f8&gt;,
- &#39;Protect&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4630&gt;,
- &#39;using&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4668&gt;,
- &#39;public&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c46a0&gt;,
- &#39;transportation&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c46d8&gt;,
- &#39;Practice&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4710&gt;,
- &#39;social&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4748&gt;,
- &#39;distancing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4780&gt;,
- &#39;avoid&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c47b8&gt;,
- &#39;touching&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c47f0&gt;,
- &#39;surfaces&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4828&gt;,
- &#39;practice&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4860&gt;,
- &#39;hand&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4898&gt;,
- &#39;hygiene&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c48d0&gt;,
- &#39;As&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4908&gt;,
- &#39;AM&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4940&gt;,
- &#39;till&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4978&gt;,
- &#39;now&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c49b0&gt;,
- &#39;there&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c49e8&gt;,
- &#39;total&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4a20&gt;,
- &#39;amp&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4a58&gt;,
- &#39;related&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4a90&gt;,
- &#39;Manipur&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4ac8&gt;,
- &#39;COVIDIndia&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4b00&gt;,
- &#39;COVIDUpdates&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4b38&gt;,
- &#39;CoronaUpdates&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4b70&gt;,
- &#39;Corona&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4ba8&gt;,
- &#39;CoronavirusIndia&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4be0&gt;,
- &#39;CoronavirusUpdates&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4c18&gt;,
- &#39;CoronavirusPandemic&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4c50&gt;,
- &#39;Because&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4c88&gt;,
- &#39;Donald&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4cc0&gt;,
- &#39;negligence&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4cf8&gt;,
- &#39;incompetence&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4d30&gt;,
- &#39;died&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4d68&gt;,
- &#39;nearly&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4da0&gt;,
- &#39;Over&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4dd8&gt;,
- &#39;Americans&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4e10&gt;,
- &#39;out&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4e48&gt;,
- &#39;work&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4e80&gt;,
- &#39;And&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4eb8&gt;,
- &#39;yet&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4ef0&gt;,
- &#39;hes&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4f28&gt;,
- &#39;himself&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4f60&gt;,
- &#39;back&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4f98&gt;,
- &#39;continues&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1c4fd0&gt;,
- &#39;scale&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb048&gt;,
- &#39;peaks&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb080&gt;,
- &#39;samples&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb0b8&gt;,
- &#39;consecutive&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb0f0&gt;,
- &#39;days&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb128&gt;,
- &#39;No&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb160&gt;,
- &#39;country&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb198&gt;,
- &#39;these&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb1d0&gt;,
- &#39;levels&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb208&gt;,
- &#39;very&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb240&gt;,
- &#39;high&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb278&gt;,
- &#39;NIH&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb2b0&gt;,
- &#39;used&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb2e8&gt;,
- &#39;planned&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb320&gt;,
- &#39;Multiple&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb358&gt;,
- &#39;Facebook&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb390&gt;,
- &#39;posts&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb3c8&gt;,
- &#39;claim&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb400&gt;,
- &#39;will&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb438&gt;,
- &#39;fined&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb470&gt;,
- &#39;they&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb4a8&gt;,
- &#39;talking&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb4e0&gt;,
- &#39;conspiracies&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb518&gt;,
- &#39;do&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb550&gt;,
- &#39;included&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb588&gt;,
- &#39;screenshot&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb5c0&gt;,
- &#39;segment&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb5f8&gt;,
- &#39;an&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb630&gt;,
- &#39;Australian&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb668&gt;,
- &#39;television&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb6a0&gt;,
- &#39;show&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb6d8&gt;,
- &#39;evidence&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb710&gt;,
- &#39;Nobel&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb748&gt;,
- &#39;Prize&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb780&gt;,
- &#39;laureate&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb7b8&gt;,
- &#39;Tasuku&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb7f0&gt;,
- &#39;Honjo&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb828&gt;,
- &#39;didnt&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb860&gt;,
- &#39;say&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb898&gt;,
- &#39;natural&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb8d0&gt;,
- &#39;post&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb908&gt;,
- &#39;claims&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb940&gt;,
- &#39;fact&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb978&gt;,
- &#39;Professor&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb9b0&gt;,
- &#39;said&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cb9e8&gt;,
- &#39;his&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cba20&gt;,
- &#39;name&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cba58&gt;,
- &#39;misinformation&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cba90&gt;,
- &#39;This&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbac8&gt;,
- &#39;latest&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbb00&gt;,
- &#39;CoronaCheck&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbb38&gt;,
- &#39;NZ&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbb70&gt;,
- &#39;Tracker&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbba8&gt;,
- &#39;app&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbbe0&gt;,
- &#39;remain&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbc18&gt;,
- &#39;important&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbc50&gt;,
- &#39;useful&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbc88&gt;,
- &#39;Alert&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbcc0&gt;,
- &#39;level&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbcf8&gt;,
- &#39;People&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbd30&gt;,
- &#39;encouraged&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbd68&gt;,
- &#39;download&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbda0&gt;,
- &#39;similar&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbdd8&gt;,
- &#39;one&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbe10&gt;,
- &#39;keep&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbe48&gt;,
- &#39;record&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbe80&gt;,
- &#39;where&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbeb8&gt;,
- &#39;youre&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbef0&gt;,
- &#39;going&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbf28&gt;,
- &#39;BREAKING&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbf60&gt;,
- &#39;NEWS&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbf98&gt;,
- &#39;president&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cbfd0&gt;,
- &#39;asked&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca048&gt;,
- &#39;all&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca080&gt;,
- &#39;foreign&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca0b8&gt;,
- &#39;nations&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca0f0&gt;,
- &#39;south&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca128&gt;,
- &#39;Africa&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca160&gt;,
- &#39;before&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b7a2588&gt;,
- &#39;due&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1c4528d0&gt;,
- &#39;increasing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca198&gt;,
- &#39;countries&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca1d0&gt;,
- &#39;economies&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca208&gt;,
- &#39;confirmed&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca240&gt;,
- &#39;participate&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca278&gt;,
- &#39;COVAX&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca2b0&gt;,
- &#39;Facility&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca2e8&gt;,
- &#39;number&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca320&gt;,
- &#39;growing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca358&gt;,
- &#39;I&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca390&gt;,
- &#39;urge&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca3c8&gt;,
- &#39;who&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca400&gt;,
- &#39;joined&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca438&gt;,
- &#39;so&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca470&gt;,
- &#39;by&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca4a8&gt;,
- &#39;September&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca4e0&gt;,
- &#39;Very&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca518&gt;,
- &#39;possibility&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca550&gt;,
- &#39;changes&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca588&gt;,
- &#39;anxiety&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca5c0&gt;,
- &#39;may&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca5f8&gt;,
- &#39;function&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca630&gt;,
- &#39;into&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca668&gt;,
- &#39;CNS&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca6a0&gt;,
- &#39;brain&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca6d8&gt;,
- &#39;To&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca710&gt;,
- &#39;New&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca748&gt;,
- &#39;Baby&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca780&gt;,
- &#39;Get&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca7b8&gt;,
- &#39;covid&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca7f0&gt;,
- &#39;sanitizer&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca828&gt;,
- &#39;developed&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca860&gt;,
- &#39;University&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca898&gt;,
- &#39;Kenya&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca8d0&gt;,
- &#39;Just&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca908&gt;,
- &#39;B&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca940&gt;,
- &#39;gathering&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca978&gt;,
- &#39;state&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca9b0&gt;,
- &#39;orders&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1ca9e8&gt;,
- &#39;huge&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1caa20&gt;,
- &#39;Same&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1caa58&gt;,
- &#39;goes&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1caa90&gt;,
- &#39;D&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1caac8&gt;,
- &#39;evaluation&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cab00&gt;,
- &#39;Yesterday&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cab38&gt;,
- &#39;completed&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cab70&gt;,
- &#39;were&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1caba8&gt;,
- &#39;managed&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cabe0&gt;,
- &#39;isolation&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cac18&gt;,
- &#39;quarantine&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cac50&gt;,
- &#39;routine&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cac88&gt;,
- &#39;either&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cacc0&gt;,
- &#39;their&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cacf8&gt;,
- &#39;That&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cad30&gt;,
- &#39;brings&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cad68&gt;,
- &#39;N&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cada0&gt;,
- &#39;masks&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cadd8&gt;,
- &#39;UV&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cae10&gt;,
- &#39;light&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cae48&gt;,
- &#39;heat&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cae80&gt;,
- &#39;effective&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1caeb8&gt;,
- &#39;sanitizers&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1caef0&gt;,
- &#39;shifted&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1caf28&gt;,
- &#39;focus&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1caf60&gt;,
- &#39;moments&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1caf98&gt;,
- &#39;CoronavirusOutbreak&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b1cafd0&gt;,
- &#39;updated&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b048&gt;,
- &#39;running&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b080&gt;,
- &#39;timeline&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b0b8&gt;,
- &#39;response&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b0f0&gt;,
- &#39;virus&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b128&gt;,
- &#39;us&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b160&gt;,
- &#39;recent&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b198&gt;,
- &#39;Trump&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b1d0&gt;,
- &#39;think&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b208&gt;,
- &#39;belong&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b240&gt;,
- &#39;list&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b278&gt;,
- &#39;image&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b2b0&gt;,
- &#39;President&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b2e8&gt;,
- &#39;shared&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b320&gt;,
- &#39;claiming&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b358&gt;,
- &#39;he&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b390&gt;,
- &#39;weekend&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b3c8&gt;,
- &#39;choose&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b400&gt;,
- &#39;spend&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b438&gt;,
- &#39;event&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b470&gt;,
- &#39;ft&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b4a8&gt;,
- &#39;apart&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b4e0&gt;,
- &#39;wear&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b518&gt;,
- &#39;cloth&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b550&gt;,
- &#39;face&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b588&gt;,
- &#39;cover&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b5c0&gt;,
- &#39;slow&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b5f8&gt;,
- &#39;Mothers&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b630&gt;,
- &#39;Stop&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b668&gt;,
- &#39;Vaccine&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b6a0&gt;,
- &#39;Singapore&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b6d8&gt;,
- &#39;Airlines&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b710&gt;,
- &#39;All&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b748&gt;,
- &#39;Flights&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b780&gt;,
- &#39;Due&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b7b8&gt;,
- &#39;Outbreak&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b7f0&gt;,
- &#39;Florida&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b828&gt;,
- &#39;Governor&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b860&gt;,
- &#39;Ron&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b898&gt;,
- &#39;DeSantis&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b8d0&gt;,
- &#39;By&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b908&gt;,
- &#39;banning&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b940&gt;,
- &#39;beer&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b978&gt;,
- &#39;pandemic&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b9b0&gt;,
- &#39;curve&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43b9e8&gt;,
- &#39;apologise&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43ba20&gt;,
- &#39;Government&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43ba58&gt;,
- &#39;Ekiti&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43ba90&gt;,
- &#39;State&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bac8&gt;,
- &#39;error&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bb00&gt;,
- &#39;committed&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bb38&gt;,
- &#39;improving&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bb70&gt;,
- &#39;quality&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bba8&gt;,
- &#39;control&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bbe0&gt;,
- &#39;processes&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bc18&gt;,
- &#39;ensure&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bc50&gt;,
- &#39;accurate&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bc88&gt;,
- &#39;transparent&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bcc0&gt;,
- &#39;reporting&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bcf8&gt;,
- &#39;NYT&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bd30&gt;,
- &#39;invented&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bd68&gt;,
- &#39;video&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bda0&gt;,
- &#39;doctor&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bdd8&gt;,
- &#39;fighting&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43be10&gt;,
- &#39;hospital&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43be48&gt;,
- &#39;May&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43be80&gt;,
- &#39;break&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43beb8&gt;,
- &#39;k&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bef0&gt;,
- &#39;Today&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bf28&gt;,
- &#39;South&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bf60&gt;,
- &#39;alone&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bf98&gt;,
- &#39;ALERT&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b43bfd0&gt;,
- &#39;With&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434048&gt;,
- &#39;Symptoms&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434080&gt;,
- &#39;Are&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4340b8&gt;,
- &#39;Being&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4340f0&gt;,
- &#39;Asked&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434128&gt;,
- &#39;Cough&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434160&gt;,
- &#39;Directly&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434198&gt;,
- &#39;Onto&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4341d0&gt;,
- &#39;launched&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434208&gt;,
- &#39;Solidarity&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434240&gt;,
- &#39;Fund&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434278&gt;,
- &#39;which&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4342b0&gt;,
- &#39;far&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4342e8&gt;,
- &#39;M&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434320&gt;,
- &#39;individuals&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434358&gt;,
- &#39;companies&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434390&gt;,
- &#39;addition&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4343c8&gt;,
- &#39;billion&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434400&gt;,
- &#39;Member&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434438&gt;,
- &#39;support&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434470&gt;,
- &#39;player&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4344a8&gt;,
- &#39;Cristiano&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4344e0&gt;,
- &#39;Ronaldo&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434518&gt;,
- &#39;turned&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434550&gt;,
- &#39;hotels&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434588&gt;,
- &#39;hospitals&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4345c0&gt;,
- &#39;patients&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4345f8&gt;,
- &#39;paying&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434630&gt;,
- &#39;doctors&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434668&gt;,
- &#39;staff&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4346a0&gt;,
- &#39;including&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4346d8&gt;,
- &#39;again&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434710&gt;,
- &#39;asymptomatic&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434748&gt;,
- &#39;workers&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434780&gt;,
- &#39;involved&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4347b8&gt;,
- &#39;airport&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4347f0&gt;,
- &#39;border&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434828&gt;,
- &#39;part&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434860&gt;,
- &#39;wider&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434898&gt;,
- &#39;surveillance&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4348d0&gt;,
- &#39;measures&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434908&gt;,
- &#39;expected&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434940&gt;,
- &#39;early&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434978&gt;,
- &#39;July&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4349b0&gt;,
- &#39;dont&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4349e8&gt;,
- &#39;want&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434a20&gt;,
- &#39;national&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434a58&gt;,
- &#39;lockdown&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434a90&gt;,
- &#39;progress&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434ac8&gt;,
- &#39;UK&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434b00&gt;,
- &#39;PM&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434b38&gt;,
- &#39;says&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434b70&gt;,
- &#39;govt&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434ba8&gt;,
- &#39;take&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434be0&gt;,
- &#39;further&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434c18&gt;,
- &#39;insists&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434c50&gt;,
- &#39;doesnt&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434c88&gt;,
- &#39;second&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434cc0&gt;,
- &#39;here&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434cf8&gt;,
- &#39;Our&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434d30&gt;,
- &#39;update&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434d68&gt;,
- &#39;published&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434da0&gt;,
- &#39;Recoveries&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434dd8&gt;,
- &#39;exceeded&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434e10&gt;,
- &#39;Cases&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434e48&gt;,
- &#39;top&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434e80&gt;,
- &#39;Active&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434eb8&gt;,
- &#39;also&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434ef0&gt;,
- &#39;ones&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434f28&gt;,
- &#39;presently&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434f60&gt;,
- &#39;recoveries&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434f98&gt;,
- &#39;There&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b434fd0&gt;,
- &#39;current&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d048&gt;,
- &#39;capacity&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d080&gt;,
- &#39;gives&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d0b8&gt;,
- &#39;excess&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d0f0&gt;,
- &#39;next&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d128&gt;,
- &#39;week&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d160&gt;,
- &#39;projecting&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d198&gt;,
- &#39;arrivals&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d1d0&gt;,
- &#39;departures&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d208&gt;,
- &#39;facilities&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d240&gt;,
- &#39;Schools&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d278&gt;,
- &#39;struggling&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d2b0&gt;,
- &#39;cope&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d2e8&gt;,
- &#39;lack&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d320&gt;,
- &#39;infections&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d358&gt;,
- &#39;since&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d390&gt;,
- &#39;it&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d3c8&gt;,
- &#39;became&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d400&gt;,
- &#39;compulsory&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d438&gt;,
- &#39;pupils&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d470&gt;,
- &#39;return&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d4a8&gt;,
- &#39;But&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d4e0&gt;,
- &#39;should&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d518&gt;,
- &#39;get&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d550&gt;,
- &#39;your&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d588&gt;,
- &#39;child&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d5c0&gt;,
- &#39;Heres&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d5f8&gt;,
- &#39;Scientists&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d630&gt;,
- &#39;AstraZeneca&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d668&gt;,
- &#39;complain&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d6a0&gt;,
- &#39;keeps&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d6d8&gt;,
- &#39;being&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d710&gt;,
- &#39;delayed&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d748&gt;,
- &#39;up&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d780&gt;,
- &#39;ask&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d7b8&gt;,
- &#39;ready&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d7f0&gt;,
- &#39;Masks&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d828&gt;,
- &#39;widely&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d860&gt;,
- &#39;When&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d898&gt;,
- &#39;mask&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d8d0&gt;,
- &#39;them&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d908&gt;,
- &#39;incl&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d940&gt;,
- &#39;WearAMask&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d978&gt;,
- &#39;WorldMaskWeek&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d9b0&gt;,
- &#39;COVIDNigeria&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42d9e8&gt;,
- &#39;Lagos&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42da20&gt;,
- &#39;Gombe&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42da58&gt;,
- &#39;Plateau&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42da90&gt;,
- &#39;Kwara&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42dac8&gt;,
- &#39;Enugu&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42db00&gt;,
- &#39;Ogun&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42db38&gt;,
- &#39;Katsina&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42db70&gt;,
- &#39;Bauchi&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42dba8&gt;,
- &#39;Osun&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42dbe0&gt;,
- &#39;Rivers&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42dc18&gt;,
- &#39;discharged&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42dc50&gt;,
- &#39;Did&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42dc88&gt;,
- &#39;You&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42dcc0&gt;,
- &#39;Already&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42dcf8&gt;,
- &#39;Have&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42dd30&gt;,
- &#39;Test&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42dd68&gt;,
- &#39;RT&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42dda0&gt;,
- &#39;INDIA&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42ddd8&gt;,
- &#39;sustained&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42de10&gt;,
- &#39;surges&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42de48&gt;,
- &#39;ahead&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42de80&gt;,
- &#39;highest&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42deb8&gt;,
- &#39;single&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42def0&gt;,
- &#39;RECOVERY&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42df28&gt;,
- &#39;Italy&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42df60&gt;,
- &#39;exhausted&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42df98&gt;,
- &#39;Has&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42dfd0&gt;,
- &#39;Been&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436048&gt;,
- &#39;Forced&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436080&gt;,
- &#39;Wear&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4360b8&gt;,
- &#39;Protective&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4360f0&gt;,
- &#39;Medical&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436128&gt;,
- &#39;Mask&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436160&gt;,
- &#39;donaldtrump&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436198&gt;,
- &#39;moving&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4361d0&gt;,
- &#39;offline&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436208&gt;,
- &#39;user&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436240&gt;,
- &#39;posted&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436278&gt;,
- &#39;site&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4362b0&gt;,
- &#39;told&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4362e8&gt;,
- &#39;had&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436320&gt;,
- &#39;dead&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436358&gt;,
- &#39;living&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436390&gt;,
- &#39;under&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4363c8&gt;,
- &#39;continued&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436400&gt;,
- &#39;government&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436438&gt;,
- &#39;toiletpaper&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436470&gt;,
- &#39;Residents&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4364a8&gt;,
- &#39;York&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4364e0&gt;,
- &#39;what&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436518&gt;,
- &#39;rule&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436550&gt;,
- &#39;allows&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436588&gt;,
- &#39;England&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4365c0&gt;,
- &#39;fail&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4365f8&gt;,
- &#39;selfisolate&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436630&gt;,
- &#39;read&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436668&gt;,
- &#39;click&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4366a0&gt;,
- &#39;Central&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4366d8&gt;,
- &#39;given&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436710&gt;,
- &#39;permission&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436748&gt;,
- &#39;schools&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436780&gt;,
- &#39;reopen&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4367b8&gt;,
- &#39;approved&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4367f0&gt;,
- &#39;labs&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436828&gt;,
- &#39;These&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436860&gt;,
- &#39;Govt&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436898&gt;,
- &#39;Pvt&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4368d0&gt;,
- &#39;come&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436908&gt;,
- &#39;pressure&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436940&gt;,
- &#39;availability&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436978&gt;,
- &#39;Fewer&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4369b0&gt;,
- &#39;kids&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4369e8&gt;,
- &#39;dying&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436a20&gt;,
- &#39;white&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436a58&gt;,
- &#39;paper&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436a90&gt;,
- &#39;examines&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436ac8&gt;,
- &#39;why&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436b00&gt;,
- &#39;WHO&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436b38&gt;,
- &#39;almost&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436b70&gt;,
- &#39;Although&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436ba8&gt;,
- &#39;affected&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436be0&gt;,
- &#39;continue&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436c18&gt;,
- &#39;see&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436c50&gt;,
- &#39;intense&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436c88&gt;,
- &#39;transmission&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436cc0&gt;,
- &#39;relatively&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436cf8&gt;,
- &#39;group&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436d30&gt;,
- &#39;Justin&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436d68&gt;,
- &#39;Trudeau&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436da0&gt;,
- &#39;George&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436dd8&gt;,
- &#39;Soros&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436e10&gt;,
- &#39;responsible&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436e48&gt;,
- &#39;born&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436e80&gt;,
- &#39;laboratory&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436eb8&gt;,
- &#39;sensitivity&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436ef0&gt;,
- &#39;test&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436f28&gt;,
- &#39;definitely&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436f60&gt;,
- &#39;specialists&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436f98&gt;,
- &#39;seen&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b436fd0&gt;,
- &#39;real&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431048&gt;,
- &#39;havent&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431080&gt;,
- &#39;looked&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4310b8&gt;,
- &#39;hard&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4310f0&gt;,
- &#39;because&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431128&gt;,
- &#39;weve&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431160&gt;,
- &#39;doing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431198&gt;,
- &#39;things&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4311d0&gt;,
- &#39;Experts&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431208&gt;,
- &#39;Call&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431240&gt;,
- &#39;Out&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431278&gt;,
- &#39;Claims&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4312b0&gt;,
- &#39;Cow&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4312e8&gt;,
- &#39;AYUSH&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431320&gt;,
- &#39;Can&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431358&gt;,
- &#39;Prevent&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431390&gt;,
- &#39;Treat&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4313c8&gt;,
- &#39;main&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431400&gt;,
- &#39;mode&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431438&gt;,
- &#39;Novel&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431470&gt;,
- &#39;through&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4314a8&gt;,
- &#39;droplets&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4314e0&gt;,
- &#39;possible&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431518&gt;,
- &#39;infected&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431550&gt;,
- &#39;carrying&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431588&gt;,
- &#39;clear&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4315c0&gt;,
- &#39;smoke&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4315f8&gt;,
- &#39;cause&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431630&gt;,
- &#39;various&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431668&gt;,
- &#39;health&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4316a0&gt;,
- &#39;problems&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4316d8&gt;,
- &#39;An&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431710&gt;,
- &#39;article&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431748&gt;,
- &#39;Bill&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431780&gt;,
- &#39;Gates&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4317b8&gt;,
- &#39;would&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4317f0&gt;,
- &#39;human&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431828&gt;,
- &#39;DNA&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431860&gt;,
- &#39;General&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431898&gt;,
- &#39;DYK&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4318d0&gt;,
- &#39;Handwashing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431908&gt;,
- &#39;remains&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431940&gt;,
- &#39;best&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431978&gt;,
- &#39;ways&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4319b0&gt;,
- &#39;viruses&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4319e8&gt;,
- &#39;Here&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431a20&gt;,
- &#39;According&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431a58&gt;,
- &#39;Health&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431a90&gt;,
- &#39;Department&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431ac8&gt;,
- &#39;Haryana&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431b00&gt;,
- &#39;RecoveryRate&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431b38&gt;,
- &#39;Sundays&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431b70&gt;,
- &#39;Mondays&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431ba8&gt;,
- &#39;tend&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431be0&gt;,
- &#39;numbers&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431c18&gt;,
- &#39;Still&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431c50&gt;,
- &#39;rising&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431c88&gt;,
- &#39;hospitalizations&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431cc0&gt;,
- &#39;jump&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431cf8&gt;,
- &#39;holiday&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431d30&gt;,
- &#39;report&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431d68&gt;,
- &#39;World&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431da0&gt;,
- &#39;Organization&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431dd8&gt;,
- &#39;parliament&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431e10&gt;,
- &#39;went&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431e48&gt;,
- &#39;empty&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431e80&gt;,
- &#39;thousands&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431eb8&gt;,
- &#39;times&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431ef0&gt;,
- &#39;Twitter&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431f28&gt;,
- &#39;YouTube&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431f60&gt;,
- &#39;salt&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431f98&gt;,
- &#39;remedy&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b431fd0&gt;,
- &#39;UN&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426048&gt;,
- &#39;Antonio&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426080&gt;,
- &#39;sustainable&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4260b8&gt;,
- &#39;development&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4260f0&gt;,
- &#39;question&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426128&gt;,
- &#39;made&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426160&gt;,
- &#39;hunger&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426198&gt;,
- &#39;Latest&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4261d0&gt;,
- &#39;world&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426208&gt;,
- &#39;news&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426240&gt;,
- &#39;Instagram&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426278&gt;,
- &#39;circulation&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4262b0&gt;,
- &#39;many&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4262e8&gt;,
- &#39;months&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426320&gt;,
- &#39;Across&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426358&gt;,
- &#39;tracked&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426390&gt;,
- &#39;bulk&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4263c8&gt;,
- &#39;Louisiana&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426400&gt;,
- &#39;Philippines&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426438&gt;,
- &#39;crisis&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426470&gt;,
- &#39;vocal&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4264a8&gt;,
- &#39;closure&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4264e0&gt;,
- &#39;Indias&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426518&gt;,
- &#39;Total&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426550&gt;,
- &#39;contribute&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426588&gt;,
- &#39;active&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4265c0&gt;,
- &#39;fatality&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4265f8&gt;,
- &#39;most&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426630&gt;,
- &#39;seeing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426668&gt;,
- &#39;its&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4266a0&gt;,
- &#39;older&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4266d8&gt;,
- &#39;citizens&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426710&gt;,
- &#39;Black&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426748&gt;,
- &#39;Asian&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426780&gt;,
- &#39;communities&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4267b8&gt;,
- &#39;key&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4267f0&gt;,
- &#39;paid&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426828&gt;,
- &#39;fewer&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426860&gt;,
- &#39;protections&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426898&gt;,
- &#39;scales&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4268d0&gt;,
- &#39;tota&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426908&gt;,
- &#39;Italian&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426940&gt;,
- &#39;nobody&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426978&gt;,
- &#39;dangerous&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4269b0&gt;,
- &#39;flu&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4269e8&gt;,
- &#39;influenza&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426a20&gt;,
- &#39;vaccination&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426a58&gt;,
- &#39;mandatory&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426a90&gt;,
- &#39;Georgia&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426ac8&gt;,
- &#39;fall&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426b00&gt;,
- &#39;mortality&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426b38&gt;,
- &#39;rates&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426b70&gt;,
- &#39;significantly&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426ba8&gt;,
- &#39;lower&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426be0&gt;,
- &#39;fatalities&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426c18&gt;,
- &#39;caused&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426c50&gt;,
- &#39;Mt&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426c88&gt;,
- &#39;Roskill&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426cc0&gt;,
- &#39;Evangelical&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426cf8&gt;,
- &#39;Fellowship&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426d30&gt;,
- &#39;bereavement&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426d68&gt;,
- &#39;includes&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426da0&gt;,
- &#39;whose&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426dd8&gt;,
- &#39;source&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426e10&gt;,
- &#39;events&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426e48&gt;,
- &#39;Zealand&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426e80&gt;,
- &#39;receiving&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426eb8&gt;,
- &#39;hospitallevel&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426ef0&gt;,
- &#39;care&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426f28&gt;,
- &#39;bringing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426f60&gt;,
- &#39;pm&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426f98&gt;,
- &#39;April&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b426fd0&gt;,
- &#39;breakdown&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a048&gt;,
- &#39;FCT&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a080&gt;,
- &#39;Kano&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a0b8&gt;,
- &#39;Oyo&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a0f0&gt;,
- &#39;Edo&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a128&gt;,
- &#39;Kaduna&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a160&gt;,
- &#39;Akwa&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a198&gt;,
- &#39;Ibom&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a1d0&gt;,
- &#39;Delta&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a208&gt;,
- &#39;Ondo&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a240&gt;,
- &#39;Niger&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a278&gt;,
- &#39;Benue&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a2b0&gt;,
- &#39;Anambra&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a2e8&gt;,
- &#39;Borno&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a320&gt;,
- &#39;Jigawa&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a358&gt;,
- &#39;biggest&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a390&gt;,
- &#39;change&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a3c8&gt;,
- &#39;data&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a400&gt;,
- &#39;hospitalized&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a438&gt;,
- &#39;Floridas&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a470&gt;,
- &#39;seem&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a4a8&gt;,
- &#39;likely&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a4e0&gt;,
- &#39;decline&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a518&gt;,
- &#39;soon&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a550&gt;,
- &#39;Confirmed&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a588&gt;,
- &#39;Recovered&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a5c0&gt;,
- &#39;Deaths&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a5f8&gt;,
- &#39;Via&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a630&gt;,
- &#39;Galicia&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a668&gt;,
- &#39;enabled&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a6a0&gt;,
- &#39;s&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a6d8&gt;,
- &#39;commitment&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a710&gt;,
- &#39;set&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a748&gt;,
- &#39;Laboratories&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a780&gt;,
- &#39;expanding&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a7b8&gt;,
- &#39;For&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a7f0&gt;,
- &#39;details&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a828&gt;,
- &#39;visit&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a860&gt;,
- &#39;ICMRFightsCOVID&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a898&gt;,
- &#39;Claim&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a8d0&gt;,
- &#39;minister&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a908&gt;,
- &#39;conspiracy&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a940&gt;,
- &#39;Pregnant&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a978&gt;,
- &#39;women&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a9b0&gt;,
- &#39;higher&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42a9e8&gt;,
- &#39;underway&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42aa20&gt;,
- &#39;Once&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42aa58&gt;,
- &#39;projects&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42aa90&gt;,
- &#39;complete&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42aac8&gt;,
- &#39;controlling&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42ab00&gt;,
- &#39;effectively&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42ab38&gt;,
- &#39;easier&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42ab70&gt;,
- &#39;proper&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42aba8&gt;,
- &#39;medicines&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42abe0&gt;,
- &#39;vaccines&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42ac18&gt;,
- &#39;etc&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42ac50&gt;,
- &#39;infectious&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42ac88&gt;,
- &#39;diseases&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42acc0&gt;,
- &#39;across&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42acf8&gt;,
- &#39;It&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42ad30&gt;,
- &#39;acquired&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42ad68&gt;,
- &#39;locally&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42ada0&gt;,
- &#39;unknown&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42add8&gt;,
- &#39;Compare&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42ae10&gt;,
- &#39;Mexico&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42ae48&gt;,
- &#39;population&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42ae80&gt;,
- &#39;Californias&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42aeb8&gt;,
- &#39;even&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42aef0&gt;,
- &#39;close&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42af28&gt;,
- &#39;community&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42af60&gt;,
- &#39;Auckland&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42af98&gt;,
- &#39;based&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b42afd0&gt;,
- &#39;connected&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e048&gt;,
- &#39;existing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e080&gt;,
- &#39;outbreak&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e0b8&gt;,
- &#39;contacts&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e0f0&gt;,
- &#39;already&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e128&gt;,
- &#39;household&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e160&gt;,
- &#39;previously&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e198&gt;,
- &#39;still&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e1d0&gt;,
- &#39;investigation&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e208&gt;,
- &#39;GP&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e240&gt;,
- &#39;Wellington&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e278&gt;,
- &#39;precautionary&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e2b0&gt;,
- &#39;message&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e2e8&gt;,
- &#39;catch&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e320&gt;,
- &#39;fire&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e358&gt;,
- &#39;amount&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e390&gt;,
- &#39;alcohol&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e3c8&gt;,
- &#39;hands&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e400&gt;,
- &#39;lady&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e438&gt;,
- &#39;near&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e470&gt;,
- &#39;ended&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e4a8&gt;,
- &#39;burning&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e4e0&gt;,
- &#39;her&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e518&gt;,
- &#39;Zealands&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e550&gt;,
- &#39;Says&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e588&gt;,
- &#39;bought&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e5c0&gt;,
- &#39;shares&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e5f8&gt;,
- &#39;primary&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e630&gt;,
- &#39;supplier&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e668&gt;,
- &#39;hydroxychloroquine&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e6a0&gt;,
- &#39;February&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e6d8&gt;,
- &#39;student&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e710&gt;,
- &#39;Pondicherry&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e748&gt;,
- &#39;accepted&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e780&gt;,
- &#39;turning&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e7b8&gt;,
- &#39;records&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e7f0&gt;,
- &#39;Highest&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e828&gt;,
- &#39;ever&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e860&gt;,
- &#39;peak&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e898&gt;,
- &#39;exceed&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e8d0&gt;,
- &#39;Do&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e908&gt;,
- &#39;cough&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e940&gt;,
- &#39;fever&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e978&gt;,
- &#39;runny&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e9b0&gt;,
- &#39;nose&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41e9e8&gt;,
- &#39;came&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41ea20&gt;,
- &#39;suddenly&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41ea58&gt;,
- &#39;theres&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41ea90&gt;,
- &#39;good&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41eac8&gt;,
- &#39;chance&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41eb00&gt;,
- &#39;could&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41eb38&gt;,
- &#39;Watch&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41eb70&gt;,
- &#39;find&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41eba8&gt;,
- &#39;Responsible&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41ebe0&gt;,
- &#39;china&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41ec18&gt;,
- &#39;Mumbai&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41ec50&gt;,
- &#39;District&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41ec88&gt;,
- &#39;Maharastra&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41ecc0&gt;,
- &#39;CoronaUpdatesInIndia&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41ecf8&gt;,
- &#39;Public&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41ed30&gt;,
- &#39;weekly&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41ed68&gt;,
- &#39;include&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41eda0&gt;,
- &#39;common&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41edd8&gt;,
- &#39;cold&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41ee10&gt;,
- &#39;suspected&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41ee48&gt;,
- &#39;causing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41ee80&gt;,
- &#39;Some&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41eeb8&gt;,
- &#39;become&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41eef0&gt;,
- &#39;severely&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41ef28&gt;,
- &#39;ill&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41ef60&gt;,
- &#39;means&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41ef98&gt;,
- &#39;require&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b41efd0&gt;,
- &#39;hospitalization&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b422048&gt;,
- &#39;intensive&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b422080&gt;,
- &#39;ventilator&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4220b8&gt;,
- &#39;breathe&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4220f0&gt;,
- &#39;die&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b422128&gt;,
- &#39;Camila&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b422160&gt;,
- &#39;Brazilian&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b422198&gt;,
- &#39;actress&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4221d0&gt;,
- &#39;contracted&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b422208&gt;,
- &#39;she&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b422240&gt;,
- &#39;caught&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b422278&gt;,
- &#39;malaria&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4222b0&gt;,
- &#39;wrong&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4222e8&gt;,
- &#39;causes&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b422320&gt;,
- &#39;sudden&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b422358&gt;,
- &#39;syndrome&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b422390&gt;,
- &#39;Increasing&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4223c8&gt;,
- &#39;gap&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b422400&gt;,
- &#39;parties&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b422438&gt;,
- &#39;deadly&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b422470&gt;,
- &#39;consequences&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4224a8&gt;,
- &#39;Cabinet&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4224e0&gt;,
- &#39;Office&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b422518&gt;,
- &#39;Minister&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b422550&gt;,
- &#39;shift&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b422588&gt;,
- &#39;working&#39;: &lt;gensim.models.keyedvectors.Vocab at 0x1b4225c0&gt;,
- ...}</pre>
+<pre>[(&#39;limit&#39;, 0.9768205881118774),
+ (&#39;release&#39;, 0.9766485691070557),
+ (&#39;situations&#39;, 0.9753804802894592),
+ (&#39;affects&#39;, 0.9744065403938293),
+ (&#39;prepare&#39;, 0.972599446773529),
+ (&#39;recommendations&#39;, 0.9723010063171387),
+ (&#39;actions&#39;, 0.9672763347625732),
+ (&#39;summer&#39;, 0.9670650362968445),
+ (&#39;restrictive&#39;, 0.9668740630149841),
+ (&#39;decisions&#39;, 0.9664255380630493)]</pre>
 </div>
 
 </div>
@@ -15962,7 +16118,7 @@ Test Set: (2140, 2) 2140
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Word2Vec_demo</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">get_vector</span><span class="p">(</span><span class="s1">&#39;found&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Word2Vec_demo</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">&#39;found&#39;</span><span class="p">,</span> <span class="s1">&#39;learn&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15984,156 +16140,7 @@ Test Set: (2140, 2) 2140
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([-0.37790594,  0.25178614, -0.25015625,  0.06193734, -0.02622736,
-        0.04949442,  0.14849077, -0.29846174, -0.43325028,  0.25066236,
-       -0.18275881, -0.3628533 ,  0.25013748, -0.10943056, -0.18671635,
-       -0.22082567,  0.21560626, -0.1663268 ,  0.12925372, -0.09161195,
-       -0.41486788,  0.2009539 ,  0.12259419,  0.29566625, -0.27154422,
-       -0.03853616, -0.24800439, -0.01181509,  0.47284752, -0.58062434,
-       -0.36116907,  0.20723794, -0.11019854, -0.17152588,  0.0301386 ,
-        0.07203249, -0.02467019, -0.02894994,  0.07250453, -0.12193761,
-        0.13700248, -0.05451193,  0.20110337, -0.20926444, -0.05671606,
-        0.34711826, -0.19449724,  0.21060102,  0.31932816,  0.12096509,
-       -0.04345911,  0.11961421,  0.08567034,  0.0310676 ,  0.0006889 ,
-        0.01353536,  0.13037851,  0.00885697, -0.3738768 ,  0.07807399,
-        0.33935708, -0.11547631, -0.18201739, -0.13580202, -0.09060465,
-        0.01109889, -0.13409397,  0.13783216,  0.2446803 ,  0.08564437,
-       -0.06783411,  0.07842179,  0.34438753,  0.19507654,  0.07402977,
-       -0.22497328,  0.28336886,  0.06269142,  0.08666421,  0.07736171,
-       -0.17363685, -0.3677355 , -0.21992068, -0.2260227 ,  0.10614953,
-       -0.08615408, -0.50495523, -0.01061542,  0.06194649,  0.18830752,
-        0.00270113, -0.2522629 ,  0.10858259, -0.01820094,  0.1349544 ,
-       -0.04271676, -0.4472778 , -0.1898204 ,  0.15769662, -0.18689565],
-      dtype=float32)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Word2Vec_demo</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">similar_by_word</span><span class="p">(</span><span class="s1">&#39;found&#39;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[(&#39;patient&#39;, 0.9093965291976929),
- (&#39;cured&#39;, 0.8788198232650757),
- (&#39;created&#39;, 0.8742652535438538),
- (&#39;made&#39;, 0.8718529939651489),
- (&#39;Brazil&#39;, 0.8673173189163208),
- (&#39;contracted&#39;, 0.8664710521697998),
- (&#39;developed&#39;, 0.8648313283920288),
- (&#39;dying&#39;, 0.8597583770751953),
- (&#39;discovered&#39;, 0.8593358397483826),
- (&#39;Italy&#39;, 0.8592194318771362)]</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Word2Vec_demo</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">similar_by_word</span><span class="p">(</span><span class="s1">&#39;learn&#39;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[(&#39;situations&#39;, 0.978007435798645),
- (&#39;limit&#39;, 0.9692554473876953),
- (&#39;summer&#39;, 0.9688585996627808),
- (&#39;recommendations&#39;, 0.9682987332344055),
- (&#39;release&#39;, 0.9679379463195801),
- (&#39;Check&#39;, 0.9664818048477173),
- (&#39;readily&#39;, 0.9663912057876587),
- (&#39;explain&#39;, 0.9633677005767822),
- (&#39;gathering&#39;, 0.9625636339187622),
- (&#39;Until&#39;, 0.9624168276786804)]</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Word2Vec_demo</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">&#39;found&#39;</span><span class="p">,</span> <span class="s1">&#39;learn&#39;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>0.56311315</pre>
+<pre>0.566445</pre>
 </div>
 
 </div>
@@ -16150,11 +16157,15 @@ Test Set: (2140, 2) 2140
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span> <span class="n">time</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">gensim</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">KeyedVectors</span><span class="o">.</span><span class="n">load_word2vec_format</span><span class="p">(</span><span class="s1">&#39;wiki-news-300d-1M-subword.vec&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vec_PATH</span> <span class="o">=</span> <span class="s1">&#39;wiki-news-300d-1M-subword.vec&#39;</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">Path</span><span class="p">(</span><span class="n">vec_PATH</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+    <span class="n">gdd</span><span class="o">.</span><span class="n">download_file_from_google_drive</span><span class="p">(</span>
+        <span class="n">file_id</span><span class="o">=</span><span class="s1">&#39;13vQg_gzs8JkYA8GJ8Qen_tw67AwEgOZ6&#39;</span><span class="p">,</span>
+        <span class="n">dest_path</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="o">+</span><span class="n">vec_PATH</span><span class="p">,</span>
+        <span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16165,7 +16176,43 @@ Test Set: (2140, 2) 2140
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">gensim</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">KeyedVectors</span><span class="o">.</span><span class="n">load_word2vec_format</span><span class="p">(</span><span class="s1">&#39;wiki-news-300d-1M-subword.vec&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Wall time: 4min 9s
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="n">topn</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
@@ -16184,7 +16231,7 @@ Test Set: (2140, 2) 2140
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 
 
 
@@ -16211,7 +16258,7 @@ Test Set: (2140, 2) 2140
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span><span class="n">topn</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
@@ -16230,7 +16277,7 @@ Test Set: (2140, 2) 2140
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 
 
 
